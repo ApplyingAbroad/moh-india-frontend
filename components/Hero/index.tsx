@@ -6,8 +6,8 @@ import NavBar from './NavBar'
 const Hero = () => {
   return (
       <>
-          <LogoBar />
           <NavBar />
+          <LogoBar />
           <MainContent/>
       </>
   )

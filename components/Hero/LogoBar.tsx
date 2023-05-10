@@ -7,7 +7,7 @@ export default function LogoBar() {
         {/* Header */}
         <header
           id='page-header'
-          className='flex flex-none items-center bg-white py-10'>
+          className='flex flex-none items-center bg-white py-5 lg:py-10'>
           <div className='relative container xl:max-w-7xl mx-auto px-4 lg:px-10'>
             <div className='flex items-center justify-center'>
               {/* Logo */}
