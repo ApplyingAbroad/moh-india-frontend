@@ -10,12 +10,13 @@ export default function CTA() {
           <div className='flex items-center flex-col md:flex-row relative space-y-8 md:space-y-0'>
             {/* Heading */}
             <div className='md:w-7/12 py-5 md:p-5 text-center md:text-left font-serif'>
-              <h2 className='text-3xl md:text-4xl font-extrabold mb-4 text-orange-950'>
-                Start your online business
+              <h2 className='text-3xl md:text-4xl font-semibold mb-4 text-orange-950'>
+                Ready to take your clothing line to the next level?
               </h2>
-              <h3 className='text-lg text-orange-900/90'>
-                Get your own custom dashboard and start building amazing
-                services. Inspiring results from day one without the pain.
+              <h3 className='text-lg text-orange-950 font-sans font-light'>
+                Contact us now to schedule a consultation with our team and
+                learn more about our full-service clothing manufacturing
+                capabilities.
               </h3>
             </div>
             {/* END Heading */}
