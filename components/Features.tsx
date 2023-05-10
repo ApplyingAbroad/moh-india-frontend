@@ -73,7 +73,7 @@ export default function Features() {
                     <p className='text-gray-800 font-light leading-relaxed'>
                       We offer a wide range of customization options to help you
                       create the perfect clothing line for your brand. Whether
-                      you're looking for unique designs, custom sizes, or
+                      you&apos;re looking for unique designs, custom sizes, or
                       personalized branding, we have the expertise to bring your
                       vision to life.
                     </p>
