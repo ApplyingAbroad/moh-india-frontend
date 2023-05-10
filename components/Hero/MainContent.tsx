@@ -1,0 +1,32 @@
+import React from 'react'
+
+const MainContent = () => {
+  return (
+    <>
+      <div className='pb-8 container xl:max-w-7xl mx-auto px-4 lg:px-10 relative my-10'>
+        <img
+          src='/product/header.jpg'
+          alt=''
+          className='h-96 lg:h-[500px] w-full object-cover lg:object-top object-left'
+        />
+        <img
+          src='/product/Bottom_Banner_2000x.jpg'
+          alt=''
+          className='hidden lg:block absolute -bottom-0 w-1/4 object-cover object-left right-32 h-96'
+        />
+        <div className='font-serif grid'>
+          <h1 className='text-2xl lg:text-4xl max-w-xl mt-5 leading-normal text-orange-950 font-medium'>
+            We are a full-service clothing manufacturing factory
+          </h1>
+          <a
+            className='text-lg lg:text-2xl mt-5 text-orange-800 hover:text-orange-600'
+            href='#'>
+            Contact us now &rarr;
+          </a>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default MainContent
