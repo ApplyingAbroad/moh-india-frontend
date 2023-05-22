@@ -1,7 +1,17 @@
-import { useState } from 'react'
-
+import { useEffect, useState } from 'react'
+import axiosService from '../../api/axios'
+import Link from 'next/link'
 export default function NavBar() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
+  const [services, setServices]: any = useState()
+  useEffect(() => {
+    axiosService.get('').then((res) => {
+      setServices(res.data.data.allService)
+      console.log(services)
+    })
+
+    console.log(services)
+  }, [])
 
   return (
     <>
@@ -21,7 +31,7 @@ export default function NavBar() {
               fill='currentColor'
               aria-hidden='true'>
               <path
-                fill-rule='evenodd'
+                fillRule='evenodd'
                 d='M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z'
                 clipRule='evenodd'
               />
@@ -33,10 +43,18 @@ export default function NavBar() {
               {/* Mega Menu visible on large screens */}
               <ul className='hidden lg:flex items-center'>
                 <li className='group'>
-                  {/* Solutions Link */}
                   <a
                     href='#'
-                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:text-orange-500 text-orange-900 hover:text-gray-500'>
+                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:text-orange-700 text-orange-900 hover:text-gray-500'>
+                    <span>Home</span>
+                  </a>
+                </li>
+
+                <li className='group'>
+                  {/* Services Link */}
+                  <Link
+                    href='#'
+                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:text-orange-700 text-orange-900 hover:text-gray-500'>
                     <span>Services</span>
                     <svg
                       fill='currentColor'
@@ -49,175 +67,80 @@ export default function NavBar() {
                         clipRule='evenodd'
                       />
                     </svg>
-                  </a>
-                  {/* END Solutions Link */}
+                  </Link>
 
-                  {/* Solutions Menu */}
-                  <div className='absolute top-8 right-10 left-10 pt-8 invisible group-hover:visible z-10'>
+                  <div className='absolute top-2 pt-8 invisible group-hover:visible z-10'>
                     <div className='bg-white shadow-xl ring-1 ring-black ring-opacity-5 rounded-lg transform origin-top transition duration-300 ease-out opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 overflow-hidden'>
-                      <div className='grid grid-cols-2 w-fit transform transition duration-500 ease-out opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100'>
-                        <div className='p-8 space-y-6'>
-                          <h4 className='text-xs uppercase font-semibold tracking-wider text-orange-900'>
-                            Products
-                          </h4>
-                          <nav className='flex flex-col space-y-3'>
-                            <a
-                              href='#'
-                              className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                              HTML Editor
-                            </a>
-                            <a
-                              href='#'
-                              className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                              CSS Editor
-                            </a>
-                            <a
-                              href='#'
-                              className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                              Web Page Builder
-                            </a>
-                            <a
-                              href='#'
-                              className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                              Animations Pack
-                            </a>
-                            <a
-                              href='#'
-                              className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                              3D Web Studio
-                            </a>
-                            <a
-                              href='#'
-                              className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                              Web Templates
-                            </a>
-                          </nav>
-                        </div>
-                        <div className='p-8 space-y-6'>
-                          <h4 className='text-xs uppercase font-semibold tracking-wider text-orange-900'>
-                            Features
-                          </h4>
-                          <nav className='flex flex-col space-y-3'>
-                            <a
-                              href='#'
-                              className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                              Overview
-                            </a>
-                            <a
-                              href='#'
-                              className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                              Components
-                            </a>
-                            <a
-                              href='#'
-                              className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                              Media Libraries
-                            </a>
-                            <a
-                              href='#'
-                              className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                              Databases
-                            </a>
-                            <a
-                              href='#'
-                              className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                              Auto Backups
-                            </a>
-                            <a
-                              href='#'
-                              className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                              24/7 Phone Support
-                            </a>
+                      <div className='w-fit transform transition duration-500 ease-out opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100'>
+                        <div className='p-4 space-y-6'>
+                          <nav className='font-sans flex flex-col space-y-3'>
+                            {services?.map((service: any) => (
+                              <Link
+                                href='/services/[slug]'
+                                className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
+                                {service.title}
+                              </Link>
+                            ))}
                           </nav>
                         </div>
                       </div>
                     </div>
                   </div>
-                  {/* END Solutions Menu */}
                 </li>
-                {/* Developers Link */}
                 <li className='group'>
                   <a
-                    href='#'
-                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:text-orange-500 text-orange-900 hover:text-gray-500'>
-                    <span>Developers</span>
+                    href='/#products'
+                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:text-orange-700 text-orange-900 hover:text-gray-500'>
+                    <span>Products</span>
                   </a>
                 </li>
-
-                {/* Resources Link */}
                 <li className='group'>
-                  <a
-                    href='#'
-                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:text-orange-500 text-orange-900 hover:text-gray-500'>
-                    <span>Resources</span>
-                  </a>
-                </li>
-                {/* Pricing Link */}
-                <li className='group'>
-                  <a
-                    href='#'
-                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:text-orange-500 text-orange-900 hover:text-gray-500'>
-                    <span>Pricing</span>
-                  </a>
+                  <Link
+                    href='/contact'
+                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:text-orange-700 text-orange-900 hover:text-gray-500'>
+                    <span>Contact Us</span>
+                  </Link>
                 </li>
               </ul>
-              {/* END Mega Menu visible on large screens */}
             </div>
 
-            {/* Navigation on smaller screens */}
             <div className={`lg:hidden ${mobileNavOpen ? '' : 'hidden'}`}>
-              <div className='grid grid-cols-1 sm:grid-cols-3 bg-gray-50 rounded-xl mt-5'>
+              <div className='bg-gray-50 rounded-xl mt-5'>
                 <div className='p-8 space-y-6'>
-                  <h4 className='text-xs uppercase font-semibold tracking-wider text-orange-900'>
-                    Solutions
-                  </h4>
                   <nav className='flex flex-col space-y-3'>
                     <a
                       href='#'
                       className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                      HTML Editor
+                      <h4 className='font-semibold text-orange-900'>Home</h4>
                     </a>
-                    <a
-                      href='#'
-                      className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                      CSS Editor
-                    </a>
-                    <a
-                      href='#'
-                      className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                      Web Page Builder
-                    </a>
-                    <a
-                      href='#'
-                      className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                      Animations Pack
-                    </a>
-                    <a
-                      href='#'
-                      className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                      3D Web Studio
-                    </a>
-                    <a
-                      href='#'
-                      className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                      Web Templates
-                    </a>
-                  </nav>
-                  <nav className='flex flex-col space-y-3'>
-                    <a
-                      href='#'
-                      className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                      <h4 className='text-xs uppercase font-semibold tracking-wider text-orange-900'>
-                        Resources
+                    <>
+                      <h4 className='text-sm font-semibold text-orange-900'>
+                        Services
                       </h4>
-                    </a>
-                    <a
-                      href='#'
+                      <nav className='flex flex-col space-y-3 pl-3'>
+                        {services?.map((service: any) => (
+                          <Link
+                            href='/services/[slug]'
+                            className='font-sans text-sm text-gray-600 hover:text-orange-600 font-medium'>
+                            {service.title}
+                          </Link>
+                        ))}
+                      </nav>
+                    </>
+                    <Link
+                      href='/#products'
                       className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                      <h4 className='text-xs uppercase font-semibold tracking-wider text-orange-900'>
-                        Pricing
+                      <h4 className='font-semibold text-orange-900'>
+                        Products
                       </h4>
-                    </a>
+                    </Link>
+                    <Link
+                      href='/contact'
+                      className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
+                      <h4 className='font-semibold text-orange-900'>
+                        Contact Us
+                      </h4>
+                    </Link>
                   </nav>
                 </div>
               </div>
