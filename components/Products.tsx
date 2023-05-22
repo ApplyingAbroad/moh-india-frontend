@@ -2,7 +2,7 @@ export default function Products() {
   return (
     <>
       {/* Product List Section: Products Grid */}
-      <div className='bg-white    '>
+      <div>
         <div className='container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32'>
           {/* Filters */}
           <div className='font-serif mb-10'>

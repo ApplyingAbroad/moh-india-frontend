@@ -2,7 +2,7 @@ export default function Features() {
   return (
     <>
       {/* Features Section: Featured Image Side */}
-      <div className='bg-white overflow-hidden'>
+      <div className='overflow-hidden'>
         <div className='container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32'>
           <div className='flex flex-col lg:flex-row lg:items-center space-y-12 lg:space-y-0 lg:space-x-28'>
             <div className='lg:w-1/2 xl:w-2/5 flex-none relative'>

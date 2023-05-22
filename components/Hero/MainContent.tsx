@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const MainContent = () => {
@@ -19,11 +20,11 @@ const MainContent = () => {
             Experience End-to-End Clothing Production with Our Full-Service
             Manufacturing Factory
           </h1>
-          <a
+          <Link
             className='text-lg lg:text-2xl mt-5 text-orange-800 hover:text-orange-600'
-            href='#'>
+            href='/contact'>
             Contact us now &rarr;
-          </a>
+          </Link>
         </div>
       </div>
     </>

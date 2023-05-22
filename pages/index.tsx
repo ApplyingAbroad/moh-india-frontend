@@ -3,7 +3,9 @@ import Main from './_home'
 export default function Home() {
   return (
     <>
-      <Main />
+      <main className="bg-orange-50">
+        <Main />
+      </main>
     </>
   )
 }
