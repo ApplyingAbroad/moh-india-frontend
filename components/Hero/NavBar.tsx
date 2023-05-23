@@ -1,16 +1,34 @@
 import { useEffect, useState } from 'react'
-import axiosService from '../../api/axios'
 import Link from 'next/link'
-export default function NavBar() {
-  const [mobileNavOpen, setMobileNavOpen] = useState(false)
-  const [services, setServices]: any = useState()
-  useEffect(() => {
-    axiosService.get('').then((res) => {
-      setServices(res.data.data.allService)
-      console.log(services)
-    })
+import { getClient } from '@/lib/sanity'
+import { groq } from 'next-sanity'
+import { slugify } from '@/lib/utils'
 
-    console.log(services)
+const navLinksQuery = groq`
+  *[_type == "service"] {
+    _id,
+    title,
+  }
+`
+
+export type Service = {
+  _id: string
+  title: string
+  slug?: string
+  description?: string
+  image?: any
+}
+
+const NavBar = () => {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
+  const [services, setServices] = useState<Service[]>([])
+
+  useEffect(() => {
+    const getServices = async () => {
+      const services: Service[] = await getClient(false).fetch(navLinksQuery)
+      setServices(services)
+    }
+    getServices()
   }, [])
 
   return (
@@ -43,17 +61,17 @@ export default function NavBar() {
               {/* Mega Menu visible on large screens */}
               <ul className='hidden lg:flex items-center'>
                 <li className='group'>
-                  <a
-                    href='#'
+                  <Link
+                    href='/'
                     className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:text-orange-700 text-orange-900 hover:text-gray-500'>
                     <span>Home</span>
-                  </a>
+                  </Link>
                 </li>
 
                 <li className='group'>
                   {/* Services Link */}
                   <Link
-                    href='#'
+                    href='/services'
                     className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:text-orange-700 text-orange-900 hover:text-gray-500'>
                     <span>Services</span>
                     <svg
@@ -76,8 +94,9 @@ export default function NavBar() {
                           <nav className='font-sans flex flex-col space-y-3'>
                             {services?.map((service: any) => (
                               <Link
-                                href='/services/[slug]'
-                                className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
+                                key={service._id}
+                                href={`/services/${slugify(service.title)}`}
+                                className='text-gray-600 hover:text-orange-600 font-medium text-sm capitalize'>
                                 {service.title}
                               </Link>
                             ))}
@@ -120,8 +139,9 @@ export default function NavBar() {
                       <nav className='flex flex-col space-y-3 pl-3'>
                         {services?.map((service: any) => (
                           <Link
-                            href='/services/[slug]'
-                            className='font-sans text-sm text-gray-600 hover:text-orange-600 font-medium'>
+                            key={service._id}
+                            href={`/services/${slugify(service.title)}`}
+                            className='font-sans text-sm text-gray-600 hover:text-orange-600 font-medium capitalize'>
                             {service.title}
                           </Link>
                         ))}
@@ -153,3 +173,5 @@ export default function NavBar() {
     </>
   )
 }
+
+export default NavBar
