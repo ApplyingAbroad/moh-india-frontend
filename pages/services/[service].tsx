@@ -2,12 +2,12 @@ import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 import LogoBar from '@/components/Hero/LogoBar'
 import NavBar, { Service } from '@/components/Hero/NavBar'
-import ServicePage from '@/components/Services/service'
+import ServiceTestimonials from '@/components/Services/ServiceTestimonials'
+import ServicePage from '@/components/Services/SingleService'
 import { getClient } from '@/lib/sanity'
 import { groq } from 'next-sanity'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-
 const ServicePageQuery = groq`
 *[_type == "service" && title == $service] {
     _id,
@@ -41,6 +41,7 @@ const SingleServicePage = () => {
         <NavBar />
         <LogoBar />
         <ServicePage data={data} />
+        <ServiceTestimonials />
         <CTA />
         <Footer />
       </main>

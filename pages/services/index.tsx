@@ -1,10 +1,10 @@
 import Footer from '@/components/Footer'
 import LogoBar from '@/components/Hero/LogoBar'
 import NavBar from '@/components/Hero/NavBar'
-import Services from '@/components/Services'
+import Services from '@/components/Services/AllServices'
 import React from 'react'
 
-export default () => {
+const ServicesPage = () => {
   return (
     <main className='bg-orange-50'>
       <NavBar />
@@ -14,3 +14,5 @@ export default () => {
     </main>
   )
 }
+
+export default ServicesPage

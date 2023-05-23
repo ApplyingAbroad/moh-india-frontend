@@ -106,7 +106,7 @@ export default function Services() {
 
             {/* lower card */}
             {services.slice(1).map((service) => (
-              <div className='flex flex-col lg:col-span-2'>
+              <div key={service._id} className='flex flex-col lg:col-span-2'>
                 <Link
                   href={`/services/${slugify(service.title)}`}
                   className='flex justify-center items-center bg-orange-200 relative group  overflow-hidden h-80'>

@@ -107,11 +107,11 @@ const NavBar = () => {
                   </div>
                 </li>
                 <li className='group'>
-                  <a
+                  <Link
                     href='/#products'
                     className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:text-orange-700 text-orange-900 hover:text-gray-500'>
                     <span>Products</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className='group'>
                   <Link
