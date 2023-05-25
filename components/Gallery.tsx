@@ -1,17 +1,17 @@
-export default function Products() {
+export default function Gallery() {
   return (
     <>
       {/* Product List Section: Products Grid */}
-      <div id='products'>
+      <div id='gallery'>
         <div className='container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32'>
           {/* Filters */}
           <div className='font-serif mb-10'>
             <h2 className='text-3xl text-black md:text-4xl font-semibold mb-4'>
-              Our <span className='font-light'>Products</span>
+              Gallery
             </h2>
             <h3 className='text-lg md:leading-relaxed lg:w-1/2 text-gray-600'>
-              Products That Set You Apart: Discover Our Exceptional Clothing
-              Lines and Custom Manufacturing Capabilities.
+              Cloths that set you apart from the crowd: Discover Our Exceptional
+              Clothing Lines and Custom Manufacturing Capabilities.
             </h3>
           </div>
           {/* END Filters */}

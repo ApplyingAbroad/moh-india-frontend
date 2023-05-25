@@ -108,9 +108,9 @@ const NavBar = () => {
                 </li>
                 <li className='group'>
                   <Link
-                    href='/#products'
+                    href='/#gallery'
                     className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:underline underline-offset-4 text-black'>
-                    <span>Products</span>
+                    <span>Gallery</span>
                   </Link>
                 </li>
                 <li className='group'>
@@ -148,9 +148,9 @@ const NavBar = () => {
                       </nav>
                     </>
                     <Link
-                      href='/#products'
+                      href='/#gallery'
                       className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                      <h4 className='font-semibold text-black'>Products</h4>
+                      <h4 className='font-semibold text-black'>gallery</h4>
                     </Link>
                     <Link
                       href='/contact'
