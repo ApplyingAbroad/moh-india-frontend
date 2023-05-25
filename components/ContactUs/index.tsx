@@ -5,8 +5,8 @@ export default function ContactSplit() {
   return (
     <>
       {/* Contact Section: Split */}
-      <div className='relative bg-orange-50 flex items-center overflow-hidden h-full'>
-        <div className='absolute top-0 right-0 bottom-0 w-full lg:w-1/2 bg-orange-50' />
+      <div className='relative bg-beige-50 flex items-center overflow-hidden h-full'>
+        <div className='absolute top-0 right-0 bottom-0 w-full lg:w-1/2 bg-beige-50' />
         <div className='relative container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32'>
           <Link
             href='/'
@@ -21,13 +21,13 @@ export default function ContactSplit() {
             {/* Heading */}
             <div className='flex items-center lg:px-14 space-y-6'>
               <div className='w-full'>
-                <div className='text-sm uppercase font-bold tracking-wider mb-1 text-orange-800'>
+                <div className='text-sm uppercase text-stone-500 tracking-wider mb-1'>
                   We reply in 24hrs
                 </div>
-                <h2 className='font-serif text-3xl md:text-4xl font-semibold mb-4 text-orange-950'>
+                <h2 className='font-serif text-3xl md:text-4xl font-semibold mb-4 text-black'>
                   Get in touch
                 </h2>
-                <h3 className='font-sans text-lg md:leading-relaxed text-orange-950/60'>
+                <h3 className='font-sans text-lg md:leading-relaxed text-black/60'>
                   If something does not make sense, feel free to contact us and
                   we will get back to you as soon as possible.
                 </h3>
@@ -56,10 +56,11 @@ export default function ContactSplit() {
                       First Name
                     </label>
                     <input
-                      className='block border placeholder-gray-400 px-5 py-3 leading-6 w-full border-orange-200 focus:border-orange-500 focus:ring focus:ring-orange-500 focus:ring-opacity-50'
+                      className='block  placeholder-gray-400 px-5 py-3 leading-6 w-full  ring-1 ring-stone-400 border-none focus:ring focus:ring-amber-500 focus:ring-opacity-50'
                       type='text'
                       id='firstname'
                       name='firstname'
+                      placeholder='John'
                     />
                   </div>
                   <div className='space-y-1'>
@@ -69,10 +70,11 @@ export default function ContactSplit() {
                       Last Name
                     </label>
                     <input
-                      className='block border placeholder-gray-400 px-5 py-3 leading-6 w-full border-orange-200 focus:border-orange-500 focus:ring focus:ring-orange-500 focus:ring-opacity-50'
+                      className='block placeholder-gray-400 px-5 py-3 leading-6 w-full  ring-1 ring-stone-400 border-none focus:ring focus:ring-amber-500 focus:ring-opacity-50'
                       type='text'
                       id='lastname'
                       name='lastname'
+                      placeholder='Doe'
                     />
                   </div>
                 </div>
@@ -81,10 +83,11 @@ export default function ContactSplit() {
                     Email
                   </label>
                   <input
-                    className='block border placeholder-gray-400 px-5 py-3 leading-6 w-full border-orange-200 focus:border-orange-500 focus:ring focus:ring-orange-500 focus:ring-opacity-50'
+                    className='block  placeholder-gray-400 px-5 py-3 leading-6 w-full  ring-1 ring-stone-400 border-none focus:ring focus:ring-amber-500 focus:ring-opacity-50'
                     type='email'
                     id='email'
                     name='email'
+                    placeholder='mail@company.com'
                   />
                 </div>
                 <div className='space-y-1'>
@@ -92,16 +95,17 @@ export default function ContactSplit() {
                     Message
                   </label>
                   <textarea
-                    className='block border border-orange-200 placeholder-gray-400 px-5 py-3 w-full focus:border-orange-500 focus:ring focus:ring-orange-500 focus:ring-opacity-50 resize-none'
+                    className='block ring-1 ring-stone-400 border-none placeholder-gray-400 px-5 py-3 w-full focus:ring focus:ring-amber-500 focus:ring-opacity-50 resize-none'
                     id='message'
                     name='message'
                     rows={6}
                     defaultValue={''}
+                    placeholder='Your message here...'
                   />
                 </div>
                 <button
                   type='button'
-                  className='font-serif inline-flex justify-center items-center space-x-2 border font-semibold rounded-none px-6 py-3 leading-6 border-orange-200 bg-orange-100 text-orange-900 hover:border-orange-300 hover:text-orange-950 hover:shadow-sm focus:ring focus:ring-orange-300 focus:ring-opacity-25 active:border-orange-200 active:shadow-none text-lg'>
+                  className='font-serif inline-flex justify-center items-center space-x-2  font-semibold rounded-none px-6 py-3 leading-6  ring-1 ring-black ring-opacity-40 hover:ring-opacity-100 border-none text-black text-lg transition-all'>
                   <span>Send Message</span>
                   <PaperAirplaneIcon className='w-5 h-5' />
                 </button>

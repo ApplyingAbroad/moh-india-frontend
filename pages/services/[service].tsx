@@ -37,7 +37,7 @@ const SingleServicePage = () => {
 
   return (
     <>
-      <main className='bg-orange-50'>
+      <main className='bg-beige-50'>
         <NavBar />
         <LogoBar />
         <ServicePage data={data} />

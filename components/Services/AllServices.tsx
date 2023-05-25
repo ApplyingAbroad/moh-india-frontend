@@ -47,7 +47,7 @@ export default function Services() {
             <div className='text-sm uppercase font-bold tracking-wider mb-1 text-orange-700'>
               Services
             </div>
-            <h2 className='font-serif text-orange-950 text-3xl md:text-5xl font-semibold mb-4'>
+            <h2 className='font-serif text-black text-3xl md:text-5xl font-semibold mb-4'>
               We offer a wide range of services
             </h2>
             <h3 className='text-lg md:text-xl md:leading-relaxed font-normal text-gray-600 lg:w-2/3 mx-auto'>
@@ -94,7 +94,7 @@ export default function Services() {
                 <h4 className='font-serif font-semibold text-lg sm:text-xl lg:text-3xl mb-2'>
                   <Link
                     href={`/services/${slugify(services[0]?.title)}`}
-                    className=' text-orange-950 hover:text-orange-900 capitalize'>
+                    className=' text-black hover:text-black capitalize'>
                     {services[0]?.title}
                   </Link>
                 </h4>
@@ -140,7 +140,7 @@ export default function Services() {
                 <h4 className='font-serif font-bold text-lg sm:text-xl mt-4 mb-2'>
                   <Link
                     href={`/services/${slugify(service.title)}`}
-                    className='leading-7 text-orange-950 hover:text-orange-900 line-clamp-1 capitalize'>
+                    className='leading-7 text-black hover:text-black line-clamp-1 capitalize'>
                     {service.title}
                   </Link>
                 </h4>

@@ -33,8 +33,8 @@ export default function ServicePage({ data }: { data: data }) {
             alt={data[0]?.title}
             className='w-full h-96 object-cover object-center'
           />
-          <BrandCloud />
-          <p className='prose prose-indigo prose-lg mx-auto'>
+          {/* <BrandCloud /> */}
+          <p className='prose prose-indigo prose-lg mx-auto mt-8'>
             {data[0]?.description}
           </p>
         </article>

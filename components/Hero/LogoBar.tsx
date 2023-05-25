@@ -18,7 +18,7 @@ export default function LogoBar() {
                 <img
                   src='/company/Logo_black.svg'
                   alt=''
-                  className='text-red-500 hi-outline hi-cube-transparent inline-block h-20 md:h-24'
+                  className='inline-block h-20 md:h-24'
                 />
               </Link>
             </div>

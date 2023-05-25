@@ -34,11 +34,11 @@ const NavBar = () => {
   return (
     <>
       {/* Main Header Section: With Mega Menu */}
-      <div className='bg-orange-50 font-serif sticky top-0 z-[99999]'>
+      <div className='bg-beige-50 font-serif sticky top-0 z-[99999]'>
         {/* Header */}
         <header
           id='page-header'
-          className='flex flex-col flex-none items-center bg-orange-100 py-2'>
+          className='flex flex-col flex-none items-center bg-beige-100 py-2'>
           <div
             onClick={() => setMobileNavOpen(!mobileNavOpen)}
             className='text-center flex gap-5 justify-center items-center w-full py-2 lg:hidden'>
@@ -63,7 +63,7 @@ const NavBar = () => {
                 <li className='group'>
                   <Link
                     href='/'
-                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:text-orange-700 text-orange-900 hover:text-gray-500'>
+                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:underline underline-offset-4 text-black'>
                     <span>Home</span>
                   </Link>
                 </li>
@@ -72,7 +72,7 @@ const NavBar = () => {
                   {/* Services Link */}
                   <Link
                     href='/services'
-                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:text-orange-700 text-orange-900 hover:text-gray-500'>
+                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:underline underline-offset-4 text-black'>
                     <span>Services</span>
                     <svg
                       fill='currentColor'
@@ -96,7 +96,7 @@ const NavBar = () => {
                               <Link
                                 key={service._id}
                                 href={`/services/${slugify(service.title)}`}
-                                className='text-gray-600 hover:text-orange-600 font-medium text-sm capitalize'>
+                                className='text-gray-600 hover:underline underline-offset-4 font-medium text-sm capitalize'>
                                 {service.title}
                               </Link>
                             ))}
@@ -109,14 +109,14 @@ const NavBar = () => {
                 <li className='group'>
                   <Link
                     href='/#products'
-                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:text-orange-700 text-orange-900 hover:text-gray-500'>
+                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:underline underline-offset-4 text-black'>
                     <span>Products</span>
                   </Link>
                 </li>
                 <li className='group'>
                   <Link
                     href='/contact'
-                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:text-orange-700 text-orange-900 hover:text-gray-500'>
+                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:underline underline-offset-4 text-black'>
                     <span>Contact Us</span>
                   </Link>
                 </li>
@@ -130,10 +130,10 @@ const NavBar = () => {
                     <a
                       href='#'
                       className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                      <h4 className='font-semibold text-orange-900'>Home</h4>
+                      <h4 className='font-semibold text-black'>Home</h4>
                     </a>
                     <>
-                      <h4 className='text-sm font-semibold text-orange-900'>
+                      <h4 className='text-sm font-semibold text-black'>
                         Services
                       </h4>
                       <nav className='flex flex-col space-y-3 pl-3'>
@@ -150,16 +150,12 @@ const NavBar = () => {
                     <Link
                       href='/#products'
                       className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                      <h4 className='font-semibold text-orange-900'>
-                        Products
-                      </h4>
+                      <h4 className='font-semibold text-black'>Products</h4>
                     </Link>
                     <Link
                       href='/contact'
                       className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
-                      <h4 className='font-semibold text-orange-900'>
-                        Contact Us
-                      </h4>
+                      <h4 className='font-semibold text-black'>Contact Us</h4>
                     </Link>
                   </nav>
                 </div>

@@ -7,7 +7,7 @@ import React from 'react'
 const Contact = () => {
   return (
     <>
-      <main className='bg-orange-50 min-h-screen grid'>
+      <main className='bg-beige-50 min-h-screen grid'>
         <NavBar />
         {/* <LogoBar /> */}
         <ContactForm />

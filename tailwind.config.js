@@ -37,13 +37,27 @@ module.exports = {
                 opacity: '.75',
               },
             },
-            
           },
         },
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         serif: ['Playfair Display', 'serif'],
+      },
+      colors: {
+        beige: {
+          50: '#FCF9EE',
+          100: '#F9F3DC',
+          200: '#F4E8BE',
+          300: '#EEDC9F',
+          400: '#E3C65F',
+          500: '#D8B01F',
+          600: '#C3A01B',
+          700: '#827013',
+          800: '#61500F',
+          900: '#40360A',
+          950: '#2F2807',
+        },
       },
     },
   },

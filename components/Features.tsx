@@ -16,7 +16,7 @@ export default function Features() {
               {/* Heading */}
 
               <div className='font-serif w-full'>
-                <h2 className='text-3xl text-orange-950 md:text-4xl font-semibold mb-4'>
+                <h2 className='text-3xl text-black md:text-4xl font-semibold mb-4'>
                   Why <span className='font-light'>Choose us?</span>
                 </h2>
                 <h3 className='text-lg md:leading-relaxed text-gray-600'>
@@ -34,7 +34,7 @@ export default function Features() {
                       fill='currentColor'
                       viewBox='0 0 20 20'
                       xmlns='http://www.w3.org/2000/svg'
-                      className='hi-solid hi-check-circle inline-block w-5 h-5 text-orange-900'>
+                      className='hi-solid hi-check-circle inline-block w-5 h-5 text-black'>
                       <path
                         fillRule='evenodd'
                         d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
@@ -43,7 +43,9 @@ export default function Features() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className='text-lg font-serif font-semibold mb-2'>Quality</h4>
+                    <h4 className='text-lg font-serif font-semibold mb-2'>
+                      Quality
+                    </h4>
                     <p className='text-gray-800 font-light leading-relaxed'>
                       We have a rigorous quality control process in place to
                       ensure that all of our products meet or exceed your
@@ -58,7 +60,7 @@ export default function Features() {
                       fill='currentColor'
                       viewBox='0 0 20 20'
                       xmlns='http://www.w3.org/2000/svg'
-                      className='hi-solid hi-check-circle inline-block w-5 h-5 text-orange-900'>
+                      className='hi-solid hi-check-circle inline-block w-5 h-5 text-black'>
                       <path
                         fillRule='evenodd'
                         d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
@@ -85,7 +87,7 @@ export default function Features() {
                       fill='currentColor'
                       viewBox='0 0 20 20'
                       xmlns='http://www.w3.org/2000/svg'
-                      className='hi-solid hi-check-circle inline-block w-5 h-5 text-orange-900'>
+                      className='hi-solid hi-check-circle inline-block w-5 h-5 text-black'>
                       <path
                         fillRule='evenodd'
                         d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
@@ -94,7 +96,9 @@ export default function Features() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className='text-lg font-serif font-semibold mb-2'>Speed</h4>
+                    <h4 className='text-lg font-serif font-semibold mb-2'>
+                      Speed
+                    </h4>
                     <p className='text-gray-800 font-light leading-relaxed'>
                       We understand that time is money in the fashion industry,
                       which is why we prioritize fast turnaround times without
@@ -111,7 +115,7 @@ export default function Features() {
                       fill='currentColor'
                       viewBox='0 0 20 20'
                       xmlns='http://www.w3.org/2000/svg'
-                      className='hi-solid hi-check-circle inline-block w-5 h-5 text-orange-900'>
+                      className='hi-solid hi-check-circle inline-block w-5 h-5 text-black'>
                       <path
                         fillRule='evenodd'
                         d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
@@ -132,7 +136,6 @@ export default function Features() {
                     </p>
                   </div>
                 </div>
-                
               </div>
               {/* END Features */}
             </div>
