@@ -4,12 +4,14 @@ import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import Products from '@/components/Gallery'
 import React from 'react'
+import ServicePage from '@/components/Services/SingleService'
+import Services from '@/components/Services/AllServices'
 
 const Main = () => {
   return (
     <>
       <Hero />
-      <Products />
+      <Services />
       <Features />
       <CTA />
       <Footer />

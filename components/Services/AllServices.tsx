@@ -44,7 +44,7 @@ export default function Services() {
       <section className='-mt-10'>
         <div className='space-y-16 container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32'>
           <div className='text-center'>
-            <div className='text-sm uppercase font-bold tracking-wider mb-1 text-orange-700'>
+            <div className='text-sm uppercase tracking-wider mb-1 text-stone-500'>
               Services
             </div>
             <h2 className='font-serif text-black text-3xl md:text-5xl font-semibold mb-4'>
@@ -90,7 +90,7 @@ export default function Services() {
                   />
                 </Link>
               </div>
-              <div className='w-full lg:w-4/12 lg:pl-6'>
+              <div className='w-full lg:w-4/12 lg:pl-6 mt-4 lg:mt-0'>
                 <h4 className='font-serif font-semibold text-lg sm:text-xl lg:text-3xl mb-2'>
                   <Link
                     href={`/services/${slugify(services[0]?.title)}`}
