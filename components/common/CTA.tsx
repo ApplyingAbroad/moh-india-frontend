@@ -6,7 +6,7 @@ export default function CTA() {
       {/* CTA Section: Simple Box Dark With Shapes */}
       <div className='overflow-hidden'>
         <div className='container xl:max-w-6xl mx-auto px-4 py-16 lg:px-8 lg:py-32 relative'>
-          <div className='absolute inset-0 -mx-2 my-6 lg:my-20 bg-beige-100 -skew-y-1 rotate-2 rounded' />
+          <div className='absolute inset-0 -mx-2 my-6 lg:my-20 bg-beige-100' />
           <div className='absolute top-3 lg:top-14 left-6 lg:left-6 ring-2 ring-black  w-12 h-12 -skew-y-3 rotate-45 rounded-full' />
           <div className='absolute top-2 lg:top-12 -left-6 bg-black w-16 h-16 -skew-y-3 rotate-45 rounded-3xl' />
           <div className='flex items-center flex-col md:flex-row relative space-y-8 md:space-y-0'>

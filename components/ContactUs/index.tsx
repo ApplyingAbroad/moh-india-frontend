@@ -1,14 +1,13 @@
 import { PaperAirplaneIcon } from '@heroicons/react/24/solid'
-import Link from 'next/link'
 
 export default function ContactSplit() {
   return (
     <>
       {/* Contact Section: Split */}
       <div className='relative bg-beige-50 flex items-center overflow-hidden h-full'>
-        <div className='absolute top-0 right-0 bottom-0 w-full lg:w-1/2 bg-beige-50' />
-        <div className='relative container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32'>
-          <Link
+        <div className='absolute top-0 right-0 bottom-0 w-full lg:w-1/2' />
+        <div className='relative container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-20'>
+          {/* <Link
             href='/'
             className='inline-flex items-center space-x-2 font-bold text-lg tracking-wide text-blue-600 hover:text-blue-400'>
             <img
@@ -16,10 +15,10 @@ export default function ContactSplit() {
               alt=''
               className='lg:px-14 hi-outline hi-cube-transparent inline-block h-16 mb-10'
             />
-          </Link>
+          </Link> */}
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0'>
             {/* Heading */}
-            <div className='flex items-center lg:px-14 space-y-6'>
+            <div className='lg:px-14 space-y-6'>
               <div className='w-full'>
                 <div className='text-sm uppercase text-stone-500 tracking-wider mb-1'>
                   We reply in 24hrs

@@ -1,4 +1,4 @@
-import WhatsappBecon from '@/components/WhatsappBecon'
+import WhatsappBecon from '@/components/common/WhatsappBecon'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 

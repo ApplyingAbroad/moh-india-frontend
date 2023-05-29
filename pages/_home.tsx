@@ -1,22 +1,21 @@
-import CTA from '@/components/CTA'
-import Features from '@/components/Features'
-import Footer from '@/components/Footer'
-import Hero from '@/components/Hero'
-import Products from '@/components/Gallery'
+import CTA from '@/components/common/CTA'
+import Features from '@/components/Home/Features'
+import Hero from '@/components/Home/Hero'
 import React from 'react'
-import ServicePage from '@/components/Services/SingleService'
 import Services from '@/components/Services/AllServices'
+import MasterLayout from './_layout'
 
-const Main = () => {
+const HomePage = () => {
   return (
     <>
-      <Hero />
-      <Services />
-      <Features />
-      <CTA />
-      <Footer />
+      <MasterLayout>
+        <Hero />
+        <Services />
+        <Features />
+        <CTA />
+      </MasterLayout>
     </>
   )
 }
 
-export default Main
+export default HomePage

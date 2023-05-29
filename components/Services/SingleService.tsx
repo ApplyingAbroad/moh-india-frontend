@@ -1,6 +1,6 @@
 import urlFor from '@/lib/imageUrlBuilder'
-import { Service } from '../Hero/NavBar'
-import BrandCloud from './BrandCloud'
+import { Service } from '../common/NavBar'
+import Image from 'next/image'
 
 type data = Service[]
 
@@ -21,18 +21,21 @@ export default function ServicePage({ data }: { data: data }) {
 
         {/* Blog Post */}
         <article className='max-w-5xl mx-auto'>
-          <img
-            src={
-              data[0]?.image &&
-              urlFor(data[0]?.image)
-                .ignoreImageParams()
-                .width(800)
-                .quality(60)
-                .url()
-            }
-            alt={data[0]?.title}
-            className='w-full h-96 object-cover object-center'
-          />
+          <div role='img' className='relative h-96 w-full'>
+            <Image
+              src={
+                data[0]?.image &&
+                urlFor(data[0]?.image)
+                  .ignoreImageParams()
+                  .width(800)
+                  .quality(60)
+                  .url()
+              }
+              fill
+              alt={data[0]?.title}
+              className='object-cover object-center'
+            />
+          </div>
           {/* <BrandCloud /> */}
           <p className='prose prose-indigo prose-lg mx-auto mt-8'>
             {data[0]?.description}

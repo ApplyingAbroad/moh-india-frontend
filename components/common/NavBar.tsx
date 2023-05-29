@@ -67,6 +67,20 @@ const NavBar = () => {
                     <span>Home</span>
                   </Link>
                 </li>
+                <li className='group'>
+                  <Link
+                    href='/about-us'
+                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:underline underline-offset-4 text-black'>
+                    <span>About Us</span>
+                  </Link>
+                </li>
+                <li className='group'>
+                  <Link
+                    href='/our-ethics'
+                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:underline underline-offset-4 text-black'>
+                    <span>Our Ethics</span>
+                  </Link>
+                </li>
 
                 <li className='group'>
                   {/* Services Link */}
@@ -106,13 +120,13 @@ const NavBar = () => {
                     </div>
                   </div>
                 </li>
-                {/* <li className='group'>
+                <li className='group'>
                   <Link
-                    href='/#gallery'
+                    href='/gallery'
                     className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:underline underline-offset-4 text-black'>
                     <span>Gallery</span>
                   </Link>
-                </li> */}
+                </li>
                 <li className='group'>
                   <Link
                     href='/contact'
@@ -123,35 +137,47 @@ const NavBar = () => {
               </ul>
             </div>
 
+            {/* Navigation on smaller screens */}
+
             <div className={`lg:hidden ${mobileNavOpen ? '' : 'hidden'}`}>
               <div className='bg-gray-50 rounded-xl mt-5'>
                 <div className='p-8 space-y-6'>
                   <nav className='flex flex-col space-y-3'>
-                    <a
-                      href='#'
+                    <Link
+                      href='/'
                       className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
                       <h4 className='font-semibold text-black'>Home</h4>
-                    </a>
-                    <>
-                      <h4 className='text-sm font-semibold text-black'>
-                        <Link href='/services'>Services</Link>
-                      </h4>
-                      <nav className='flex flex-col space-y-3 pl-3'>
-                        {services?.map((service: any) => (
-                          <Link
-                            key={service._id}
-                            href={`/services/${slugify(service.title)}`}
-                            className='font-sans text-sm text-gray-600 hover:text-orange-600 font-medium capitalize'>
-                            {service.title}
-                          </Link>
-                        ))}
-                      </nav>
-                    </>
-                    {/* <Link
-                      href='/#gallery'
+                    </Link>
+                    <Link
+                      href='/about-us'
+                      className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
+                      <h4 className='font-semibold text-black'>About us</h4>
+                    </Link>
+                    <Link
+                      href='/our-ethics'
+                      className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
+                      <h4 className='font-semibold text-black'>Our Ethics</h4>
+                    </Link>
+
+                    <h4 className='text-sm font-semibold text-black'>
+                      <Link href='/services'>Services</Link>
+                    </h4>
+                    <nav className='flex flex-col space-y-3 pl-3'>
+                      {services?.map((service: any) => (
+                        <Link
+                          key={service._id}
+                          href={`/services/${slugify(service.title)}`}
+                          className='font-sans text-sm text-gray-600 hover:text-orange-600 font-medium capitalize'>
+                          {service.title}
+                        </Link>
+                      ))}
+                    </nav>
+
+                    <Link
+                      href='/gallery'
                       className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
                       <h4 className='font-semibold text-black'>gallery</h4>
-                    </Link> */}
+                    </Link>
                     <Link
                       href='/contact'
                       className='text-gray-600 hover:text-orange-600 font-medium text-sm'>

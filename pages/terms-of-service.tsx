@@ -1,6 +1,6 @@
-import Footer from '@/components/Footer'
-import LogoBar from '@/components/Hero/LogoBar'
-import NavBar from '@/components/Hero/NavBar'
+import Footer from '@/components/common/Footer'
+import LogoBar from '@/components/common/LogoBar'
+import NavBar from '@/components/common/NavBar'
 import React from 'react'
 
 const Terms = () => {

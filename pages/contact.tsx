@@ -1,18 +1,12 @@
 import ContactForm from '@/components/ContactUs'
-import Footer from '@/components/Footer'
-import LogoBar from '@/components/Hero/LogoBar'
-import NavBar from '@/components/Hero/NavBar'
-import React from 'react'
+import MasterLayout from './_layout'
 
 const Contact = () => {
   return (
     <>
-      <main className='bg-beige-50 min-h-screen grid'>
-        <NavBar />
-        {/* <LogoBar /> */}
+      <MasterLayout>
         <ContactForm />
-        <Footer />
-      </main>
+      </MasterLayout>
     </>
   )
 }

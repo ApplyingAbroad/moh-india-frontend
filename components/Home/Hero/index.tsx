@@ -1,15 +1,19 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const MainContent = () => {
+const Hero = () => {
   return (
     <>
       <div className='pb-8 container xl:max-w-7xl mx-auto px-4 lg:px-10 relative my-5 lg:my-10'>
-        <img
-          src='/product/header.jpg'
-          alt=''
-          className='h-96 lg:h-[500px] w-full object-cover lg:object-top object-left'
-        />
+        <div role='img' className='relative h-96 lg:h-[500px] w-full'>
+          <Image
+            fill
+            src='/product/header.jpg'
+            alt=''
+            className='object-cover lg:object-top object-left'
+          />
+        </div>
         <img
           src='/product/stock_images/fashion (8).jpg'
           alt=''
@@ -31,4 +35,4 @@ const MainContent = () => {
   )
 }
 
-export default MainContent
+export default Hero

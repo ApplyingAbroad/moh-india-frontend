@@ -1,10 +1,11 @@
 import Link from 'next/link'
-import { Service } from '../Hero/NavBar'
+import { Service } from '../common/NavBar'
 import { useEffect, useState } from 'react'
 import { groq } from 'next-sanity'
 import { getClient } from '@/lib/sanity'
 import urlFor from '@/lib/imageUrlBuilder'
 import { slugify } from '@/lib/utils'
+import Image from 'next/image'
 
 const ServicesPageQuery = groq`
 *[_type == "service"] {
@@ -41,17 +42,14 @@ export default function Services() {
 
   return (
     <>
-      <section className='-mt-10'>
-        <div className='space-y-16 container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32'>
-          <div className='text-center'>
-            <div className='text-sm uppercase tracking-wider mb-1 text-stone-500'>
-              Services
-            </div>
-            <h2 className='font-serif text-black text-3xl md:text-5xl font-semibold mb-4'>
+      <>
+        <div className='space-y-16 container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-24'>
+          <div className='font-serif mb-10'>
+            <h2 className='text-3xl text-black font-medium md:text-4xl mb-4'>
               We offer a wide range of services
             </h2>
-            <h3 className='text-lg md:text-xl md:leading-relaxed font-normal text-gray-600 lg:w-2/3 mx-auto'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at
+            <h3 className='text-lg md:leading-relaxed lg:w-1/2 text-gray-600'>
+              We offer a wide range of services to help you achieve your goals.
             </h3>
           </div>
           <div className='grid grid-cols-1 lg:grid-cols-4 gap-12'>
@@ -75,23 +73,26 @@ export default function Services() {
                       />
                     </svg>
                   </div>
-                  <img
-                    src={
-                      services[0]?.image
-                        ? urlFor(services[0]?.image)
-                            .ignoreImageParams()
-                            .width(800)
-                            .quality(60)
-                            .url()
-                        : '/product/backlook.jpg'
-                    }
-                    className='w-full h-full object-cover'
-                    alt=''
-                  />
+                  <div role='img' className='relative h-96 w-full'>
+                    <Image
+                      src={
+                        services[0]?.image
+                          ? urlFor(services[0]?.image)
+                              .ignoreImageParams()
+                              .width(800)
+                              .quality(60)
+                              .url()
+                          : '/product/backlook.jpg'
+                      }
+                      fill
+                      className='object-cover'
+                      alt=''
+                    />
+                  </div>
                 </Link>
               </div>
               <div className='w-full lg:w-4/12 lg:pl-6 mt-4 lg:mt-0'>
-                <h4 className='font-serif font-semibold text-lg sm:text-xl lg:text-3xl mb-2'>
+                <h4 className='font-serif text-lg sm:text-xl lg:text-3xl mb-2'>
                   <Link
                     href={`/services/${slugify(services[0]?.title)}`}
                     className=' text-black hover:text-black capitalize'>
@@ -124,34 +125,37 @@ export default function Services() {
                     </svg>
                   </div>
 
-                  <img
-                    src={
-                      urlFor(service.image)
-                        .ignoreImageParams()
-                        .width(600)
-                        .quality(60)
-                        .url() || '/product/backlook.jpg'
-                    }
-                    className='w-full h-full object-cover'
-                    alt=''
-                  />
+                  <div role='img' className='relative h-full w-full'>
+                    <Image
+                      src={
+                        urlFor(service.image)
+                          .ignoreImageParams()
+                          .width(600)
+                          .quality(60)
+                          .url() || '/product/backlook.jpg'
+                      }
+                      fill
+                      className='object-cover'
+                      alt=''
+                    />
+                  </div>
                 </Link>
 
-                <h4 className='font-serif font-bold text-lg sm:text-xl mt-4 mb-2'>
+                <h4 className='font-serif text-lg sm:text-xl mt-4 mb-2'>
                   <Link
                     href={`/services/${slugify(service.title)}`}
                     className='leading-7 text-black hover:text-black line-clamp-1 capitalize'>
                     {service.title}
                   </Link>
                 </h4>
-                <p className='prose prose-indigo line-clamp-2'>
+                <p className='prose prose-indigo text-gray-500/90 line-clamp-2'>
                   {service.description}
                 </p>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </>
     </>
   )
 }

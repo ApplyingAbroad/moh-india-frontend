@@ -1,18 +1,21 @@
 import Footer from '@/components/common/Footer'
 import LogoBar from '@/components/common/LogoBar'
 import NavBar from '@/components/common/NavBar'
-import Services from '@/components/Services/AllServices'
 import React from 'react'
 
-const ServicesPage = () => {
+interface Props {
+  children: React.ReactNode
+}
+
+const MasterLayout = ({ children }: Props) => {
   return (
     <main className='bg-beige-50'>
       <NavBar />
       <LogoBar />
-      <Services />
+      {children}
       <Footer />
     </main>
   )
 }
 
-export default ServicesPage
+export default MasterLayout
