@@ -1,5 +1,4 @@
 import Footer from '@/components/common/Footer'
-import Gallery from '@/components/Gallery'
 import LogoBar from '@/components/common/LogoBar'
 import NavBar from '@/components/common/NavBar'
 import React from 'react'
