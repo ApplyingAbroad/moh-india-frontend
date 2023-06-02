@@ -3,16 +3,16 @@ import LogoBar from '@/components/common/LogoBar'
 import NavBar from '@/components/common/NavBar'
 import React from 'react'
 import Ethics from '@/components/Ethics'
+import CTA from '@/components/common/CTA'
+import MasterLayout from './_layout'
 
 const OurEthicsPage = () => {
   return (
     <>
-      <div className='bg-beige-50'>
-        <NavBar />
-        <LogoBar />
+      <MasterLayout title='Our Ethics'>
         <Ethics />
-        <Footer />
-      </div>
+        <CTA />
+      </MasterLayout>
     </>
   )
 }

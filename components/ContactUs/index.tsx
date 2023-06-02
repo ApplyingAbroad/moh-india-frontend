@@ -1,6 +1,39 @@
 import { PaperAirplaneIcon } from '@heroicons/react/24/solid'
+import { useState } from 'react'
 
 export default function ContactSplit() {
+  const [formData, setFormData] = useState({})
+
+  const handleInputChange = (e: any) => {
+    const { name, value } = e.target
+    setFormData((prevData: any) => ({
+      ...prevData,
+      [name]: value,
+    }))
+  }
+  const handleSubmit = async (e: any) => {
+    e.preventDefault()
+
+    const timestamp = Date.now()
+    const url = `https://script.google.com/macros/s/AKfycbxqKJVmsYZcM88V4P6czPWfRDuPeUeEb2rKB6klfbcr9QjIFoUOQ65-No48dL-4b79B/exec?timestamp=${timestamp}`
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+      mode: 'cors',
+    })
+
+    if (response.ok) {
+      console.log('Data saved successfully')
+      // Clear the form after successful submission
+      setFormData({})
+    } else {
+      console.error('Error saving data:', response.statusText)
+    }
+  }
   return (
     <>
       {/* Contact Section: Split */}
@@ -46,7 +79,7 @@ export default function ContactSplit() {
 
             {/* Contact Form */}
             <div className='flex items-center lg:px-14 xl:px-20'>
-              <form className='space-y-6 w-full'>
+              <form onSubmit={handleSubmit} className='space-y-6 w-full'>
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
                   <div className='space-y-1'>
                     <label
@@ -60,6 +93,7 @@ export default function ContactSplit() {
                       id='firstname'
                       name='firstname'
                       placeholder='John'
+                      onChange={handleInputChange}
                     />
                   </div>
                   <div className='space-y-1'>
@@ -74,6 +108,7 @@ export default function ContactSplit() {
                       id='lastname'
                       name='lastname'
                       placeholder='Doe'
+                      onChange={handleInputChange}
                     />
                   </div>
                 </div>
@@ -87,6 +122,20 @@ export default function ContactSplit() {
                     id='email'
                     name='email'
                     placeholder='mail@company.com'
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className='space-y-1'>
+                  <label htmlFor='phone' className='font-serif font-medium'>
+                    Mobile
+                  </label>
+                  <input
+                    className='block  placeholder-gray-400 px-5 py-3 leading-6 w-full  ring-1 ring-stone-400 border-none focus:ring focus:ring-amber-500 focus:ring-opacity-50'
+                    type='tel'
+                    id='phone'
+                    name='phone'
+                    placeholder='+91 9000000000'
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className='space-y-1'>
@@ -100,10 +149,11 @@ export default function ContactSplit() {
                     rows={6}
                     defaultValue={''}
                     placeholder='Your message here...'
+                    onChange={handleInputChange}
                   />
                 </div>
                 <button
-                  type='button'
+                  type='submit'
                   className='font-serif inline-flex justify-center items-center space-x-2  font-semibold rounded-none px-6 py-3 leading-6  ring-1 ring-black ring-opacity-40 hover:ring-opacity-100 border-none text-black text-lg transition-all'>
                   <span>Send Message</span>
                   <PaperAirplaneIcon className='w-5 h-5' />
@@ -118,3 +168,12 @@ export default function ContactSplit() {
     </>
   )
 }
+
+// const form = document.forms['google-sheet']
+
+// form.addEventListener('submit', e => {
+//   e.preventDefault()
+//   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+//     .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+//     .catch(error => console.error('Error!', error.message))
+// })

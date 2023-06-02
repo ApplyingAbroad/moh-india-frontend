@@ -6,7 +6,7 @@ import MasterLayout from './_layout'
 const AboutPage = () => {
   return (
     <>
-      <MasterLayout>
+      <MasterLayout title='About'>
         <AboutUs />
         <Team />
       </MasterLayout>

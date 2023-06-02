@@ -3,15 +3,13 @@ import LogoBar from '@/components/common/LogoBar'
 import NavBar from '@/components/common/NavBar'
 import Services from '@/components/Services/AllServices'
 import React from 'react'
+import MasterLayout from '../_layout'
 
 const ServicesPage = () => {
   return (
-    <main className='bg-beige-50'>
-      <NavBar />
-      <LogoBar />
+    <MasterLayout title='Services'>
       <Services />
-      <Footer />
-    </main>
+    </MasterLayout>
   )
 }
 

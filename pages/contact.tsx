@@ -4,7 +4,7 @@ import MasterLayout from './_layout'
 const Contact = () => {
   return (
     <>
-      <MasterLayout>
+      <MasterLayout title='Contact Us'>
         <ContactForm />
       </MasterLayout>
     </>

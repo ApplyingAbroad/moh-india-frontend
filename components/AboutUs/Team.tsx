@@ -1,33 +1,23 @@
 const people = [
   {
-    name: 'Irma Norton',
-    role: 'Founder & CEO',
-    imageUrl:
-      'https://cdn.tailkit.com/media/placeholders/avatar-iFgRcqHznqg-600x800.jpg',
+    name: 'Dinesh Aggarwal',
+    role: 'The Chair/Mentor',
+    imageUrl: '/team/Dinesh.webp',
   },
   {
-    name: 'Alejandro Lee',
-    role: 'Product Design',
-    imageUrl:
-      'https://cdn.tailkit.com/media/placeholders/avatar-sibVwORYqs0-600x600.jpg',
+    name: 'Nanak Singh Walia',
+    role: 'The Visionary/Chief Strategist',
+    imageUrl: '/team/Nanak.jpg',
   },
   {
-    name: 'John Smith',
-    role: 'Web Designer',
-    imageUrl:
-      'https://cdn.tailkit.com/media/placeholders/avatar-d2MSDujJl2g-600x600.jpg',
+    name: 'Samridhi Aggarwal',
+    role: 'The Dreamer/Chief Creator',
+    imageUrl: '/team/Sam.webp',
   },
   {
-    name: 'Alex Saunders',
-    role: 'Marketing',
-    imageUrl:
-      'https://cdn.tailkit.com/media/placeholders/avatar-ZGa9d1a_4tA-600x600.jpg',
-  },
-  {
-    name: 'Belle',
-    role: 'Mascot',
-    imageUrl:
-      'https://cdn.tailkit.com/media/placeholders/avatar-Mv9hjnEUHR4-600x600.jpg',
+    name: 'Shruti Nair',
+    role: 'The Thinker/Brand Strategist',
+    imageUrl: '/team/Shruti.jpg',
   },
 ]
 
@@ -49,7 +39,7 @@ export default function Team() {
         {/* END Heading */}
 
         {/* Team */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
           {people.map((person, index) => (
             <div key={index} className='relative group overflow-hidden'>
               <div className='aspect-w-1 aspect-h-1'>

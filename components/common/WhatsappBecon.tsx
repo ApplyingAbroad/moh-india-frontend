@@ -14,7 +14,8 @@ const WhatsappBecon = () => {
         </div>
 
         <img
-          src='/Whatsapp.svg'
+          src='/icons/whatsapp.svg'
+          alt='Whatsapp Icon'
           className='w-16 h-16 group-hover:shadow-2xl rounded-full transition-all shadow-green-500'
         />
       </Link>

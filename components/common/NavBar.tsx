@@ -120,13 +120,13 @@ const NavBar = () => {
                     </div>
                   </div>
                 </li>
-                <li className='group'>
+                {/* <li className='group'>
                   <Link
                     href='/gallery'
                     className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:underline underline-offset-4 text-black'>
                     <span>Gallery</span>
                   </Link>
-                </li>
+                </li> */}
                 <li className='group'>
                   <Link
                     href='/contact'
@@ -173,11 +173,11 @@ const NavBar = () => {
                       ))}
                     </nav>
 
-                    <Link
+                    {/* <Link
                       href='/gallery'
                       className='text-gray-600 hover:text-orange-600 font-medium text-sm'>
                       <h4 className='font-semibold text-black'>gallery</h4>
-                    </Link>
+                    </Link> */}
                     <Link
                       href='/contact'
                       className='text-gray-600 hover:text-orange-600 font-medium text-sm'>

@@ -44,6 +44,9 @@ module.exports = {
         sans: ['Inter', 'sans-serif'],
         serif: ['Playfair Display', 'serif'],
       },
+      borderWidth: {
+        1: '1px',
+      },
       colors: {
         beige: {
           50: '#FDFCF6',

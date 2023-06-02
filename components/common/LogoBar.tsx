@@ -15,9 +15,9 @@ export default function LogoBar() {
                 href='/'
                 className='inline-flex items-center space-x-2 font-bold text-lg tracking-wide text-blue-600 hover:text-blue-400'>
                 <img
-                  src='/company/Logo_black.svg'
+                  src='/company/moh-india-logo.png'
                   alt=''
-                  className='inline-block h-20 md:h-24'
+                  className='inline-block h-20 md:h-44'
                 />
               </Link>
             </div>

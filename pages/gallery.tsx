@@ -5,7 +5,7 @@ import MasterLayout from './_layout'
 const GalleryPage = () => {
   return (
     <>
-      <MasterLayout>
+      <MasterLayout title='Gallery'>
         <Gallery />
       </MasterLayout>
     </>

@@ -8,6 +8,8 @@ import { getClient } from '@/lib/sanity'
 import { groq } from 'next-sanity'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
+import MasterLayout from '../_layout'
+import { capitalizeWords } from '@/lib/utils'
 const ServicePageQuery = groq`
 *[_type == "service" && title == $service] {
     _id,
@@ -37,14 +39,11 @@ const SingleServicePage = () => {
 
   return (
     <>
-      <main className='bg-beige-50'>
-        <NavBar />
-        <LogoBar />
+      <MasterLayout title={capitalizeWords(data[0]?.title)}>
         <ServicePage data={data} />
         <ServiceTestimonials />
         <CTA />
-        <Footer />
-      </main>
+      </MasterLayout>
     </>
   )
 }
