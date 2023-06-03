@@ -67,8 +67,8 @@ export default function Ethics() {
             <div className='lg:w-7/12 xl:w-7/12 flex-none relative'>
               <div className='relative flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0'>
                 <div className='md:w-1/2 space-y-6'>
-                  {ethics[0].map((card) => (
-                    <div className='p-5 border-1 border-black'>
+                  {ethics[0].map((card, index) => (
+                    <div key={index} className='p-5 border-1 border-black'>
                       <h4 className='text-lg font-serif font-bold mb-2'>
                         {card.title}
                       </h4>
@@ -79,8 +79,8 @@ export default function Ethics() {
                   ))}
                 </div>
                 <div className='md:w-1/2 space-y-6'>
-                  {ethics[1].map((card) => (
-                    <div className='p-5 border-1 border-black'>
+                  {ethics[1].map((card, index) => (
+                    <div key={index} className='p-5 border-1 border-black'>
                       <h4 className='text-lg font-serif font-bold mb-2'>
                         {card.title}
                       </h4>

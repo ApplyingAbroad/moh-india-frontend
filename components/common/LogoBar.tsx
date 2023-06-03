@@ -16,7 +16,7 @@ export default function LogoBar() {
                 className='inline-flex items-center space-x-2 font-bold text-lg tracking-wide text-blue-600 hover:text-blue-400'>
                 <img
                   src='/company/moh-india-logo.png'
-                  alt=''
+                  alt='tailor and company logo'
                   className='inline-block h-20 md:h-44'
                 />
               </Link>

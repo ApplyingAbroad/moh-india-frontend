@@ -1,7 +1,5 @@
 import CTA from '@/components/common/CTA'
-import Footer from '@/components/common/Footer'
-import LogoBar from '@/components/common/LogoBar'
-import NavBar, { Service } from '@/components/common/NavBar'
+import { Service } from '@/components/common/NavBar'
 import ServiceTestimonials from '@/components/Services/ServiceTestimonials'
 import ServicePage from '@/components/Services/SingleService'
 import { getClient } from '@/lib/sanity'
