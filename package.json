@@ -11,6 +11,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@next/font": "13.4.1",
+    "@portabletext/to-html": "^2.0.0",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/cli": "^3.11.1",
     "@sanity/client": "^6.1.1",

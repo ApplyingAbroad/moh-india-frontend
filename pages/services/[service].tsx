@@ -15,6 +15,7 @@ const ServicePageQuery = groq`
     title,
     description,
     image,
+    content,
     }
 `
 

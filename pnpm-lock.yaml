@@ -7,6 +7,9 @@ dependencies:
   '@next/font':
     specifier: 13.4.1
     version: 13.4.1
+  '@portabletext/to-html':
+    specifier: ^2.0.0
+    version: 2.0.0
   '@sanity/block-content-to-react':
     specifier: ^3.0.0
     version: 3.0.0(react@18.2.0)
@@ -1060,8 +1063,23 @@ packages:
       react: 18.2.0
     dev: false
 
+  /@portabletext/to-html@2.0.0:
+    resolution: {integrity: sha512-wSG/8ce8g01KMShumTAeYELZeoV+J2kitsaTzWwuEQtRPJm3XcxTuCKCtWIGy/b9UF7nFvL47a1Cn2qa/bkTmw==}
+    engines: {node: ^14.13.1 || >=16.0.0}
+    dependencies:
+      '@portabletext/toolkit': 2.0.1
+      '@portabletext/types': 2.0.2
+    dev: false
+
   /@portabletext/toolkit@1.0.8:
     resolution: {integrity: sha512-SNO8at5crqySCeYa19/mdcZoZvGCINGc/eAX4FwYt02cEzb48hf013BuA9LbEQuTOgpMKxnyeRGpEzxmowmEug==}
+    engines: {node: ^14.13.1 || >=16.0.0}
+    dependencies:
+      '@portabletext/types': 2.0.2
+    dev: false
+
+  /@portabletext/toolkit@2.0.1:
+    resolution: {integrity: sha512-vr2SeDFUFV+VmRIyYsHBMimZLiiN0S7qIridt/YLJs3Wm1dI4jsfUam82AQwheSMjvWdBiBZ+Wsjq5HZBG4htw==}
     engines: {node: ^14.13.1 || >=16.0.0}
     dependencies:
       '@portabletext/types': 2.0.2

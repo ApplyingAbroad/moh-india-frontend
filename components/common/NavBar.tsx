@@ -17,6 +17,7 @@ export type Service = {
   slug?: string
   description?: string
   image?: any
+  content: []
 }
 
 const NavBar = () => {

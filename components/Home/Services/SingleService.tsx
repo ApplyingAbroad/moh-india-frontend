@@ -1,10 +1,12 @@
 import urlFor from '@/lib/imageUrlBuilder'
-import { Service } from '../../common/NavBar'
+import { Service } from '@components/common/NavBar'
 import Image from 'next/image'
-
+import { toHTML } from '@portabletext/to-html'
+import { Interweave } from 'interweave'
 type data = Service[]
 
 export default function ServicePage({ data }: { data: data }) {
+  console.log(data)
   return (
     <>
       <div className='space-y-16 container mx-auto px-4 py-10'>
@@ -37,9 +39,9 @@ export default function ServicePage({ data }: { data: data }) {
             />
           </div>
           {/* <BrandCloud /> */}
-          <p className='prose prose-indigo prose-lg mx-auto mt-8'>
-            {data[0]?.description}
-          </p>
+          <article className='prose prose-orange md:prose-lg mx-auto mt-8'>
+            <Interweave content={toHTML(data[0]?.content)} />
+          </article>
         </article>
         {/* END Blog Post */}
       </div>
