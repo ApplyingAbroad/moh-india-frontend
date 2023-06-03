@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Service } from '../common/NavBar'
+import { Service } from '../../common/NavBar'
 import { useEffect, useState } from 'react'
 import { groq } from 'next-sanity'
 import { getClient } from '@/lib/sanity'

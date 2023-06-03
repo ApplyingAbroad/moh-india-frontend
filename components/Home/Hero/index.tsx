@@ -9,20 +9,19 @@ const Hero = () => {
         <div role='img' className='relative h-96 lg:h-[500px] w-full'>
           <Image
             fill
-            src='/product/header.jpg'
+            src='/hero/hero-main.jpeg'
             alt=''
-            className='object-cover lg:object-top object-left'
+            className='object-cover lg:object-center object-left'
           />
         </div>
         <img
-          src='/product/stock_images/fashion (8).jpg'
+          src='/hero/hero-aside.jpeg'
           alt=''
           className='hidden lg:block absolute -bottom-0 w-1/4 object-cover object-top right-32 h-96'
         />
         <div className='font-serif grid'>
           <h1 className='text-2xl lg:text-4xl max-w-xl mt-5 leading-normal text-black font-medium'>
-            Experience End-to-End Clothing Production with Our Full-Service
-            Manufacturing Factory
+            Experience Exquisite Designer Wear Crafted to Perfection
           </h1>
           <Link
             className='text-lg lg:text-2xl mt-5 text-black underline decoration-1 underline-offset-8 hover:decoration-2'

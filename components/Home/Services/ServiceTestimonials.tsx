@@ -2,14 +2,14 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "I've had the pleasure of partnering with the textile manufacturing company for our clothing production needs. Their end-to-end experience is unmatched, and their full-service manufacturing factory ensures a seamless production process. I highly recommend their services.",
+      'I&apos;ve had the pleasure of partnering with the textile manufacturing company for our clothing production needs. Their end-to-end experience is unmatched, and their full-service manufacturing factory ensures a seamless production process. I highly recommend their services.',
     name: 'Amita Patel',
     position: 'Fashion Designer',
   },
   {
     id: 2,
     quote:
-      "As a boutique clothing brand owner, I've had the privilege of working with the textile manufacturing company. Their expertise in providing an end-to-end clothing production experience is impressive. Their full-service manufacturing factory has helped me bring my designs to life efficiently. I highly endorse their services.",
+      'As a boutique clothing brand owner, I&apos;ve had the privilege of working with the textile manufacturing company. Their expertise in providing an end-to-end clothing production experience is impressive. Their full-service manufacturing factory has helped me bring my designs to life efficiently. I highly endorse their services.',
     name: 'Rajesh Sharma',
     position: 'Fashion Brand Owner',
   },
@@ -23,7 +23,7 @@ const testimonials = [
   {
     id: 4,
     quote:
-      "I've collaborated with the textile manufacturing company for several seasons, and their commitment to delivering a seamless end-to-end clothing production experience is commendable. Their full-service manufacturing factory ensures top-notch quality and timely production. I highly vouch for their services.",
+      'I&apos;ve collaborated with the textile manufacturing company for several seasons, and their commitment to delivering a seamless end-to-end clothing production experience is commendable. Their full-service manufacturing factory ensures top-notch quality and timely production. I highly vouch for their services.',
     name: 'Vikram Singh',
     position: 'Fashion Retailer',
   },

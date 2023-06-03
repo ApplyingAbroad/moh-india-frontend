@@ -1,38 +1,35 @@
 const ethics = [
-  [
-    {
-      title: 'No Use of Child Labor',
-      description:
-        'We strictly prohibit the use of child labor, bonded labor, and other exploitative practices against workers.',
-    },
-    {
-      title: 'Ethical Business Conduct',
-      description:
-        'We take full responsibility and strive to meet the expectations of our employees, customers, governmental entities, and society through ethical business practices.',
-    },
-    {
-      title: 'Advocating for Sustainability',
-      description:
-        'We embrace sustainable business practices and encourage our customers to choose sustainable fabrics and trims.',
-    },
-  ],
-  [
-    {
-      title: 'Clear Communication',
-      description:
-        'We believe in clear, honest, and transparent communication, avoiding false promises or sugarcoated words.',
-    },
-    {
-      title: 'Fair Trade Policy',
-      description:
-        'We implement fair pay, reasonable pricing, and promote gender equality within our workplace and business operations.',
-    },
-    {
-      title: 'Customer-First Policy',
-      description:
-        'Our customers are of paramount importance to us. We prioritize their success and do everything possible to ensure they thrive.',
-    },
-  ],
+  {
+    title: 'No Use of Child Labor',
+    description:
+      'We strictly prohibit the use of child labor, bonded labor, and other exploitative practices against workers.',
+  },
+  {
+    title: 'Ethical Business Conduct',
+    description:
+      'We take full responsibility and strive to meet the expectations of our employees, customers, governmental entities, and society through ethical business practices.',
+  },
+  {
+    title: 'Advocating for Sustainability',
+    description:
+      'We embrace sustainable business practices and encourage our customers to choose sustainable fabrics and trims.',
+  },
+
+  {
+    title: 'Clear Communication',
+    description:
+      'We believe in clear, honest, and transparent communication, avoiding false promises or sugarcoated words.',
+  },
+  {
+    title: 'Fair Trade Policy',
+    description:
+      'We implement fair pay, reasonable pricing, and promote gender equality within our workplace and business operations.',
+  },
+  {
+    title: 'Customer-First Policy',
+    description:
+      'Our customers are of paramount importance to us. We prioritize their success and do everything possible to ensure they thrive.',
+  },
 ]
 
 export default function Ethics() {
@@ -65,31 +62,17 @@ export default function Ethics() {
 
             {/* Features in Cards */}
             <div className='lg:w-7/12 xl:w-7/12 flex-none relative'>
-              <div className='relative flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0'>
-                <div className='md:w-1/2 space-y-6'>
-                  {ethics[0].map((card, index) => (
-                    <div key={index} className='p-5 border-1 border-black'>
-                      <h4 className='text-lg font-serif font-bold mb-2'>
-                        {card.title}
-                      </h4>
-                      <p className='leading-relaxed text-gray-600'>
-                        {card.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                <div className='md:w-1/2 space-y-6'>
-                  {ethics[1].map((card, index) => (
-                    <div key={index} className='p-5 border-1 border-black'>
-                      <h4 className='text-lg font-serif font-bold mb-2'>
-                        {card.title}
-                      </h4>
-                      <p className='leading-relaxed text-gray-600'>
-                        {card.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+              <div className='relative grid grid-cols-1 md:grid-cols-2  gap-6'>
+                {ethics.map((card, index) => (
+                  <div key={index} className='p-5 border-1 border-black'>
+                    <h4 className='text-lg font-serif font-bold mb-2'>
+                      {card.title}
+                    </h4>
+                    <p className='leading-relaxed text-gray-600'>
+                      {card.description}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
             {/* END Features in Cards */}

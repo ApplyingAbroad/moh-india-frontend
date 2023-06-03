@@ -1,5 +1,5 @@
 import urlFor from '@/lib/imageUrlBuilder'
-import { Service } from '../common/NavBar'
+import { Service } from '../../common/NavBar'
 import Image from 'next/image'
 
 type data = Service[]
