@@ -92,7 +92,7 @@ const AboutUs = () => {
         <article className='prose md:prose-lg mx-auto prose-h3:font-serif prose-p:font-light font-serif text-center'>
           <h3>Quality Consciousness</h3>
           <p>
-            Quality is a fundamental aspect of our company's identity. Our
+            Quality is a fundamental aspect of our company&apos;s identity. Our
             dedicated quality control team utilizes the latest testing tools to
             ensure that the garments we deliver are free from defects. We strive
             for excellence in all our operations and minimize material wastage.
