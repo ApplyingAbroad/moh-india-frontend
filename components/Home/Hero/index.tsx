@@ -7,17 +7,25 @@ const Hero = () => {
     <>
       <div className='pb-8 container xl:max-w-7xl mx-auto px-4 lg:px-10 relative my-5 lg:my-10'>
         <div role='img' className='relative h-96 lg:h-[600px] w-full'>
-          <Image
+          {/* <Image
             fill
             src='/hero/hero-main.jpeg'
             alt=''
             className='object-cover lg:object-center object-left'
+          /> */}
+          <video
+            autoPlay
+            loop
+            muted
+            className='object-cover lg:object-center object-left w-full h-full'
+            src='/hero/hero-video.mp4'
+            poster='/hero/hero-main.jpeg'
           />
         </div>
         <img
-          src='/hero/hero-aside.jpeg'
+          src='/hero/hero-main.jpeg'
           alt=''
-          className='hidden lg:block absolute -bottom-0 w-1/4 object-cover object-top right-32 h-96'
+          className='hidden lg:block absolute -bottom-0 w-1/4 object-cover object-center right-32 h-96'
         />
         <div className='font-serif grid'>
           <h1 className='text-2xl lg:text-4xl max-w-xl mt-5 leading-normal text-black font-medium'>
