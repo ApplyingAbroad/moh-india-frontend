@@ -145,14 +145,14 @@ export default function Services({ showAll }: { showAll: boolean }) {
                     </div>
                   </Link>
 
-                  <h4 className='font-serif text-lg sm:text-xl mt-4 mb-2'>
+                  <h4 className='font-serif font-semibold text-lg sm:text-xl mt-4 mb-2'>
                     <Link
                       href={`/services/${slugify(service.title)}`}
                       className='leading-7 text-black hover:text-black line-clamp-1 capitalize'>
                       {service.title}
                     </Link>
                   </h4>
-                  <p className='prose prose-indigo text-gray-500/90 line-clamp-2'>
+                  <p className='prose prose-indigo text-gray-500/90 line-clamp-5'>
                     {service.description}
                   </p>
                 </div>
