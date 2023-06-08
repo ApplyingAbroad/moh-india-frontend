@@ -54,7 +54,7 @@ export default function Services({ showAll }: { showAll: boolean }) {
               We offer a wide range of services to help you achieve your goals.
             </h3>
           </div>
-          <div className='grid grid-cols-1 lg:grid-cols-4 gap-12'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
             {/* Main card */}
 
             {/* <div className='flex flex-col lg:flex-row lg:col-span-4'>
@@ -111,7 +111,7 @@ export default function Services({ showAll }: { showAll: boolean }) {
             {services
               .slice(0, complete ? services.length : 4)
               .map((service) => (
-                <div key={service._id} className='flex flex-col lg:col-span-2'>
+                <div key={service._id} className='flex flex-col'>
                   <Link
                     href={`/services/${slugify(service.title)}`}
                     className='flex justify-center items-center bg-orange-200 relative group  overflow-hidden h-80'>
@@ -157,23 +157,21 @@ export default function Services({ showAll }: { showAll: boolean }) {
                   </p>
                 </div>
               ))}
-            <div>
-              <button
-                onClick={() => setComplete(!complete)}
-                className='text-orange-700 hover:text-orange-600 font-medium text-lg'>
-                {complete ? (
-                  <>
-                    Show less
-                    <ChevronUpIcon className='ml-2 w-5 h-5 inline-block' />
-                  </>
-                ) : (
-                  <>
-                    Show more
-                    <ChevronDownIcon className='ml-2 w-5 h-5 inline-block' />
-                  </>
-                )}
-              </button>
-            </div>
+            <button
+              onClick={() => setComplete(!complete)}
+              className='col-span-2 text-orange-700 hover:text-orange-600 font-medium text-lg'>
+              {complete ? (
+                <>
+                  Show less
+                  <ChevronUpIcon className='ml-2 w-5 h-5 inline-block' />
+                </>
+              ) : (
+                <>
+                  Show more
+                  <ChevronDownIcon className='ml-2 w-5 h-5 inline-block' />
+                </>
+              )}
+            </button>
           </div>
         </div>
       </>
