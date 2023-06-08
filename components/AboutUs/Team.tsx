@@ -25,17 +25,17 @@ export default function Team() {
   return (
     <>
       {/* Team Section: Mini Photos with Grayscale Filter */}
-      <div className='space-y-8 container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-20'>
+      <div className='space-y-8 container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-10'>
         {/* Heading */}
 
-        <div className=' mb-10'>
+        {/* <div className=' mb-10'>
           <h2 className='font-serif text-3xl text-black md:text-4xl font-semibold mb-4'>
             Meet our team
           </h2>
           <h3 className='text-lg font-light md:leading-relaxed lg:w-1/2'>
             We are building the future. Join us.
           </h3>
-        </div>
+        </div> */}
         {/* END Heading */}
 
         {/* Team */}

@@ -5,7 +5,7 @@ import MasterLayout from '../_layout'
 const ServicesPage = () => {
   return (
     <MasterLayout title='Services'>
-      <Services />
+      <Services showAll={true} />
     </MasterLayout>
   )
 }

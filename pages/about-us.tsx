@@ -8,7 +8,7 @@ const AboutPage = () => {
     <>
       <MasterLayout title='About'>
         <AboutUs />
-        <Team />
+        {/* <Team /> */}
       </MasterLayout>
     </>
   )

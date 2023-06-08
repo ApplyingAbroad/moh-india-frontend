@@ -6,6 +6,7 @@ import { getClient } from '@/lib/sanity'
 import urlFor from '@/lib/imageUrlBuilder'
 import { slugify } from '@/lib/utils'
 import Image from 'next/image'
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
 
 const ServicesPageQuery = groq`
 *[_type == "service"] {
@@ -16,7 +17,8 @@ const ServicesPageQuery = groq`
 }
 `
 
-export default function Services() {
+export default function Services({ showAll }: { showAll: boolean }) {
+  const [complete, setComplete] = useState<boolean>(showAll)
   const [services, setServices] = useState<Service[]>([])
   useEffect(() => {
     const getServices = async () => {
@@ -25,8 +27,8 @@ export default function Services() {
       )
       // randomize the order of the services
       // localStorage.setItem('services', JSON.stringify(services))
-      services.sort(() => Math.random() - 0.5)
-      console.log(services)
+      // services.sort(() => Math.random() - 0.5)
+      // console.log(services)
 
       setServices(services)
     }
@@ -55,7 +57,7 @@ export default function Services() {
           <div className='grid grid-cols-1 lg:grid-cols-4 gap-12'>
             {/* Main card */}
 
-            <div className='flex flex-col lg:flex-row lg:col-span-4'>
+            {/* <div className='flex flex-col lg:flex-row lg:col-span-4'>
               <div className='lg:w-8/12'>
                 <Link
                   href={`/services/${slugify(services[0]?.title)}`}
@@ -103,56 +105,75 @@ export default function Services() {
                   {services[0]?.description}
                 </p>
               </div>
-            </div>
+            </div> */}
 
             {/* lower card */}
-            {services.slice(1).map((service) => (
-              <div key={service._id} className='flex flex-col lg:col-span-2'>
-                <Link
-                  href={`/services/${slugify(service.title)}`}
-                  className='flex justify-center items-center bg-orange-200 relative group  overflow-hidden h-80'>
-                  <div className='flex items-center justify-center absolute inset-0 bg-orange-700 bg-opacity-75 opacity-0 transition ease-out duration-150 group-hover:opacity-100'>
-                    <svg
-                      fill='currentColor'
-                      viewBox='0 0 20 20'
-                      xmlns='http://www.w3.org/2000/svg'
-                      className='text-white transform -rotate-45 hi-solid hi-arrow-right inline-block w-10 h-10'>
-                      <path
-                        fillRule='evenodd'
-                        d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
-                        clipRule='evenodd'
-                      />
-                    </svg>
-                  </div>
-
-                  <div role='img' className='relative h-full w-full'>
-                    <Image
-                      src={
-                        urlFor(service.image)
-                          .ignoreImageParams()
-                          .width(600)
-                          .quality(60)
-                          .url() || '/product/backlook.jpg'
-                      }
-                      fill
-                      className='object-cover'
-                      alt=''
-                    />
-                  </div>
-                </Link>
-
-                <h4 className='font-serif text-lg sm:text-xl mt-4 mb-2'>
+            {services
+              .slice(0, complete ? services.length : 4)
+              .map((service) => (
+                <div key={service._id} className='flex flex-col lg:col-span-2'>
                   <Link
                     href={`/services/${slugify(service.title)}`}
-                    className='leading-7 text-black hover:text-black line-clamp-1 capitalize'>
-                    {service.title}
+                    className='flex justify-center items-center bg-orange-200 relative group  overflow-hidden h-80'>
+                    <div className='flex items-center justify-center absolute inset-0 bg-orange-700 bg-opacity-75 opacity-0 transition ease-out duration-150 group-hover:opacity-100'>
+                      <svg
+                        fill='currentColor'
+                        viewBox='0 0 20 20'
+                        xmlns='http://www.w3.org/2000/svg'
+                        className='text-white transform -rotate-45 hi-solid hi-arrow-right inline-block w-10 h-10'>
+                        <path
+                          fillRule='evenodd'
+                          d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
+                          clipRule='evenodd'
+                        />
+                      </svg>
+                    </div>
+
+                    <div role='img' className='relative h-full w-full'>
+                      <Image
+                        src={
+                          urlFor(service.image)
+                            .ignoreImageParams()
+                            .width(600)
+                            .quality(60)
+                            .url() || '/product/backlook.jpg'
+                        }
+                        fill
+                        className='object-cover'
+                        alt=''
+                      />
+                    </div>
                   </Link>
-                </h4>
-                <p className='prose prose-indigo text-gray-500/90 line-clamp-2'>
-                  {service.description}
-                </p>
-              </div>
-            ))}
+
+                  <h4 className='font-serif text-lg sm:text-xl mt-4 mb-2'>
+                    <Link
+                      href={`/services/${slugify(service.title)}`}
+                      className='leading-7 text-black hover:text-black line-clamp-1 capitalize'>
+                      {service.title}
+                    </Link>
+                  </h4>
+                  <p className='prose prose-indigo text-gray-500/90 line-clamp-2'>
+                    {service.description}
+                  </p>
+                </div>
+              ))}
+            <div>
+              <button
+                onClick={() => setComplete(!complete)}
+                className='text-orange-700 hover:text-orange-600 font-medium text-lg'>
+                {complete ? (
+                  <>
+                    Show less
+                    <ChevronUpIcon className='ml-2 w-5 h-5 inline-block' />
+                  </>
+                ) : (
+                  <>
+                    Show more
+                    <ChevronDownIcon className='ml-2 w-5 h-5 inline-block' />
+                  </>
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </>

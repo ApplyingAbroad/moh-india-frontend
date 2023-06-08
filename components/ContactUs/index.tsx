@@ -63,7 +63,7 @@ export default function ContactSplit() {
                   If something does not make sense, feel free to contact us and
                   we will get back to you as soon as possible.
                 </h3>
-                <h4 className='uppercase text-sm font-semibold tracking-wider mt-12 mb-2'>
+                {/* <h4 className='uppercase text-sm font-semibold tracking-wider mt-12 mb-2'>
                   Company Inc.
                 </h4>
                 <div className='leading-relaxed'>
@@ -72,7 +72,7 @@ export default function ContactSplit() {
                   San Francisco, CA 85214
                   <br />
                   <abbr title='Phone'>P:</abbr> (123) 456-7890
-                </div>
+                </div> */}
               </div>
             </div>
             {/* END Heading */}

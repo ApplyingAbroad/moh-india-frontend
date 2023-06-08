@@ -12,7 +12,7 @@ const HomePage = () => {
       <MasterLayout>
         <Hero />
         <AboutUs />
-        <Services />
+        <Services showAll={false} />
         <Features />
         <CTA />
       </MasterLayout>

@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <>
       <div className='pb-8 container xl:max-w-7xl mx-auto px-4 lg:px-10 relative my-5 lg:my-10'>
-        <div role='img' className='relative h-96 lg:h-[500px] w-full'>
+        <div role='img' className='relative h-96 lg:h-[600px] w-full'>
           <Image
             fill
             src='/hero/hero-main.jpeg'

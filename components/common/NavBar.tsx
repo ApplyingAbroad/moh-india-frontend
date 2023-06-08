@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getClient } from '@/lib/sanity'
 import { groq } from 'next-sanity'
 import { slugify } from '@/lib/utils'
+import { useRouter } from 'next/router'
 
 const navLinksQuery = groq`
   *[_type == "service"] {
@@ -23,6 +24,7 @@ export type Service = {
 const NavBar = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
   const [services, setServices] = useState<Service[]>([])
+  const router = useRouter()
 
   useEffect(() => {
     const getServices = async () => {
@@ -83,11 +85,15 @@ const NavBar = () => {
                   </Link>
                 </li>
 
-                <li className='group'>
+                <li
+                  onClick={() => {
+                    router.push('/services')
+                  }}
+                  className='group cursor-pointer'>
                   {/* Services Link */}
                   <Link
                     href='/services'
-                    className='font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:underline underline-offset-4 text-black'>
+                    className='cursor-pointer font-semibold inline-flex items-center space-x-1 h-8 px-4 group-hover:underline underline-offset-4 text-black'>
                     <span>Services</span>
                     <svg
                       fill='currentColor'
