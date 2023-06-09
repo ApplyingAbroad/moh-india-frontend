@@ -1,7 +1,9 @@
+import Image from 'next/image'
+
 const people = [
   {
     name: 'Dinesh Aggarwal',
-    role: 'The Chair/Mentor',
+    role: 'The Chairman/Mentor',
     imageUrl: '/team/Dinesh.webp',
   },
   {
@@ -25,17 +27,17 @@ export default function Team() {
   return (
     <>
       {/* Team Section: Mini Photos with Grayscale Filter */}
-      <div className='space-y-8 container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-10'>
+      <div className='space-y-8 container xl:max-w-7xl mx-auto px-4 py-10 md:py-16 lg:px-8'>
         {/* Heading */}
 
-        {/* <div className=' mb-10'>
+        <div className=' mb-10 text-center mx-auto'>
           <h2 className='font-serif text-3xl text-black md:text-4xl font-semibold mb-4'>
-            Meet our team
+            The Brains Behind the Brand
           </h2>
-          <h3 className='text-lg font-light md:leading-relaxed lg:w-1/2'>
-            We are building the future. Join us.
+          <h3 className='text-lg font-light md:leading-relaxed'>
+            A dedicated team committed to delivering high-quality tailoring
           </h3>
-        </div> */}
+        </div>
         {/* END Heading */}
 
         {/* Team */}
@@ -43,7 +45,9 @@ export default function Team() {
           {people.map((person, index) => (
             <div key={index} className='relative group overflow-hidden'>
               <div className='aspect-w-1 aspect-h-1'>
-                <img
+                <Image
+                  height={400}
+                  width={400}
                   src={person.imageUrl}
                   alt='User Avatar'
                   className='transition grayscale group-hover:grayscale-0 group-hover:shadow-lg object-cover object-center'

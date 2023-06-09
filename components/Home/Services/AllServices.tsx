@@ -54,7 +54,7 @@ export default function Services({ showAll }: { showAll: boolean }) {
               We offer a wide range of services to help you achieve your goals.
             </h3>
           </div>
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
+          <div className='grid grid-cols-1 md:grid-cols-2 md:gap-12'>
             {/* Main card */}
 
             {/* <div className='flex flex-col lg:flex-row lg:col-span-4'>
@@ -115,7 +115,7 @@ export default function Services({ showAll }: { showAll: boolean }) {
                   <Link
                     href={`/services/${slugify(service.title)}`}
                     className='flex justify-center items-center bg-orange-200 relative group  overflow-hidden h-80'>
-                    <div className='flex items-center justify-center absolute inset-0 bg-orange-700 bg-opacity-75 opacity-0 transition ease-out duration-150 group-hover:opacity-100'>
+                    <div className='z-10 flex items-center justify-center absolute inset-0 bg-orange-700 bg-opacity-75 opacity-0 transition ease-out duration-150 group-hover:opacity-100'>
                       <svg
                         fill='currentColor'
                         viewBox='0 0 20 20'
@@ -129,19 +129,19 @@ export default function Services({ showAll }: { showAll: boolean }) {
                       </svg>
                     </div>
 
-                    <div role='img' className='relative h-full w-full'>
-                      <Image
-                        src={
-                          urlFor(service.image)
+                    <div role='img' className='relative h-full w-full z-0'>
+                      {service.image && (
+                        <Image
+                          src={urlFor(service.image)
                             .ignoreImageParams()
                             .width(600)
                             .quality(60)
-                            .url() || '/product/backlook.jpg'
-                        }
-                        fill
-                        className='object-cover'
-                        alt=''
-                      />
+                            ?.url()}
+                          fill
+                          className='object-cover'
+                          alt=''
+                        />
+                      )}
                     </div>
                   </Link>
 

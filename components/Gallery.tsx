@@ -5,7 +5,7 @@ export default function Gallery() {
       <div id='gallery'>
         <div className='container xl:max-w-7xl mx-auto px-4 py-16 lg:px-8 lg:py-32'>
           {/* Filters */}
-          <div className='font-serif mb-10'>
+          {/* <div className='font-serif mb-10'>
             <h2 className='text-3xl text-black md:text-4xl font-semibold mb-4'>
               Gallery
             </h2>
@@ -13,11 +13,11 @@ export default function Gallery() {
               Cloths that set you apart from the crowd: Discover Our Exceptional
               Clothing Lines and Custom Manufacturing Capabilities.
             </h3>
-          </div>
+          </div> */}
           {/* END Filters */}
 
           {/* Products */}
-          <div className='font-sans grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8'>
+          {/* <div className='font-sans grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8'>
             <div className=''>
               <div className='max-h-96 group relative overflow-hidden mb-2'>
                 <img
@@ -26,9 +26,7 @@ export default function Gallery() {
                   className='h-full'
                 />
               </div>
-              {/* <a href='#' className='block hover:text-gray-500  '>
-                Amazing Smart Watch
-              </a> */}
+              
             </div>
             <div>
               <div className='max-h-96 group relative overflow-hidden mb-2'>
@@ -37,9 +35,6 @@ export default function Gallery() {
                   src='/product/stock_images/fashion (2).jpg'
                 />
               </div>
-              {/* <a href='#' className='block hover:text-gray-500  '>
-                Modern Shoes
-              </a> */}
             </div>
             <div>
               <div className='max-h-96 group relative overflow-hidden mb-2'>
@@ -49,9 +44,6 @@ export default function Gallery() {
                   className='h-full'
                 />
               </div>
-              {/* <a href='#' className='block hover:text-gray-500  '>
-                Cool Sunglasses
-              </a> */}
             </div>
             <div>
               <div className='max-h-96 group relative overflow-hidden mb-2'>
@@ -60,9 +52,6 @@ export default function Gallery() {
                   alt='Product Image'
                 />
               </div>
-              {/* <a href='#' className='block hover:text-gray-500  '>
-                Sneakers
-              </a> */}
             </div>
             <div>
               <div className='max-h-96 group relative overflow-hidden mb-2'>
@@ -71,9 +60,6 @@ export default function Gallery() {
                   alt='Product Image'
                 />
               </div>
-              {/* <a href='#' className='block hover:text-gray-500  '>
-                Bluetooth headphones
-              </a> */}
             </div>
             <div>
               <div className='max-h-96 group relative overflow-hidden mb-2'>
@@ -82,11 +68,8 @@ export default function Gallery() {
                   alt='Product Image'
                 />
               </div>
-              {/* <a href='#' className='block hover:text-gray-500  '>
-                Retro Camera
-              </a> */}
             </div>
-          </div>
+          </div> */}
           {/* END Products */}
         </div>
       </div>

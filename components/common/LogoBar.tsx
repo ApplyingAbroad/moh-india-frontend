@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function LogoBar() {
@@ -14,10 +15,12 @@ export default function LogoBar() {
               <Link
                 href='/'
                 className='inline-flex items-center space-x-2 font-bold text-lg tracking-wide text-blue-600 hover:text-blue-400'>
-                <img
+                <Image
+                  height={500}
+                  width={500}
                   src='/company/moh-india-logo.png'
                   alt='tailor and company logo'
-                  className='inline-block h-20 md:h-44'
+                  className='inline-block h-36 md:h-44 object-contain'
                 />
               </Link>
             </div>

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -13,7 +14,9 @@ const WhatsappBecon = () => {
           Say Hi! 👋
         </div>
 
-        <img
+        <Image
+          height={100}
+          width={100}
           src='/icons/whatsapp.svg'
           alt='Whatsapp Icon'
           className='w-16 h-16 group-hover:shadow-2xl rounded-full transition-all shadow-green-500'

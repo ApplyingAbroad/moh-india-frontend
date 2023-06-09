@@ -18,8 +18,8 @@ const MasterLayout = ({ title, children }: Props) => {
           Tailoring for Your Unique Style
         </title>
       </Head>
-      <NavBar />
       <LogoBar />
+      <NavBar />
       {children}
       <Footer />
     </main>
