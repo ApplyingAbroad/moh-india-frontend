@@ -110,53 +110,57 @@ export default function Services({ showAll }: { showAll: boolean }) {
             {/* lower card */}
             {services
               .slice(0, complete ? services.length : 4)
-              .map((service) => (
-                <div key={service._id} className='flex flex-col'>
-                  <Link
-                    href={`/services/${slugify(service.title)}`}
-                    className='flex justify-center items-center bg-orange-200 relative group  overflow-hidden h-80'>
-                    <div className='z-10 flex items-center justify-center absolute inset-0 bg-orange-700 bg-opacity-75 opacity-0 transition ease-out duration-150 group-hover:opacity-100'>
-                      <svg
-                        fill='currentColor'
-                        viewBox='0 0 20 20'
-                        xmlns='http://www.w3.org/2000/svg'
-                        className='text-white transform -rotate-45 hi-solid hi-arrow-right inline-block w-10 h-10'>
-                        <path
-                          fillRule='evenodd'
-                          d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
-                          clipRule='evenodd'
-                        />
-                      </svg>
-                    </div>
+              .map((service) => {
+                return (
+                  <div key={service._id} className='flex flex-col'>
+                    <Link
+                      href={`/services/${slugify(service.title)}`}
+                      className='flex justify-center items-center bg-orange-200 relative group  overflow-hidden h-80'>
+                      <div className='z-10 flex items-center justify-center absolute inset-0 bg-orange-700 bg-opacity-75 opacity-0 transition ease-out duration-150 group-hover:opacity-100'>
+                        <svg
+                          fill='currentColor'
+                          viewBox='0 0 20 20'
+                          xmlns='http://www.w3.org/2000/svg'
+                          className='text-white transform -rotate-45 hi-solid hi-arrow-right inline-block w-10 h-10'>
+                          <path
+                            fillRule='evenodd'
+                            d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z'
+                            clipRule='evenodd'
+                          />
+                        </svg>
+                      </div>
 
-                    <div role='img' className='relative h-full w-full z-0'>
-                      {service.image && (
+                      <div role='img' className='relative h-full w-full'>
                         <Image
-                          src={urlFor(service.image)
-                            .ignoreImageParams()
-                            .width(600)
-                            .quality(60)
-                            ?.url()}
+                          src={
+                            (service?.image &&
+                              urlFor(service?.image)
+                                ?.ignoreImageParams()
+                                ?.width(600)
+                                ?.quality(60)
+                                ?.url()) ??
+                            '/product/backlook.jpg'
+                          }
                           fill
                           className='object-cover'
                           alt=''
                         />
-                      )}
-                    </div>
-                  </Link>
-
-                  <h4 className='font-serif font-semibold text-lg sm:text-xl mt-4 mb-2'>
-                    <Link
-                      href={`/services/${slugify(service.title)}`}
-                      className='leading-7 text-black hover:text-black line-clamp-1 capitalize'>
-                      {service.title}
+                      </div>
                     </Link>
-                  </h4>
-                  <p className='prose prose-indigo text-gray-500/90 line-clamp-5'>
-                    {service.description}
-                  </p>
-                </div>
-              ))}
+
+                    <h4 className='font-serif font-semibold text-lg sm:text-xl mt-4 mb-2'>
+                      <Link
+                        href={`/services/${slugify(service.title)}`}
+                        className='leading-7 text-black hover:text-black line-clamp-1 capitalize'>
+                        {service.title}
+                      </Link>
+                    </h4>
+                    <p className='prose prose-indigo text-gray-500/90 line-clamp-5'>
+                      {service.description}
+                    </p>
+                  </div>
+                )
+              })}
             <button
               onClick={() => setComplete(!complete)}
               className='col-span-2 text-orange-700 hover:text-orange-600 font-medium text-lg'>
