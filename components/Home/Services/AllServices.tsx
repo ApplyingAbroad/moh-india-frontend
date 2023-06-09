@@ -25,10 +25,6 @@ export default function Services({ showAll }: { showAll: boolean }) {
       const services: Service[] = await getClient(false).fetch(
         ServicesPageQuery
       )
-      // randomize the order of the services
-      // localStorage.setItem('services', JSON.stringify(services))
-      // services.sort(() => Math.random() - 0.5)
-      // console.log(services)
 
       setServices(services)
     }
@@ -54,7 +50,7 @@ export default function Services({ showAll }: { showAll: boolean }) {
               We offer a wide range of services to help you achieve your goals.
             </h3>
           </div>
-          <div className='grid grid-cols-1 md:grid-cols-2 md:gap-12'>
+          <div className='flex flex-col md:grid md:grid-cols-2 gap-y-6 md:gap-12'>
             {/* Main card */}
 
             {/* <div className='flex flex-col lg:flex-row lg:col-span-4'>
@@ -131,20 +127,22 @@ export default function Services({ showAll }: { showAll: boolean }) {
                       </div>
 
                       <div role='img' className='relative h-full w-full'>
-                        <Image
-                          src={
-                            (service?.image &&
-                              urlFor(service?.image)
-                                ?.ignoreImageParams()
-                                ?.width(600)
-                                ?.quality(60)
-                                ?.url()) ??
-                            '/product/backlook.jpg'
-                          }
-                          fill
-                          className='object-cover'
-                          alt=''
-                        />
+                        {service.image && (
+                          <Image
+                            src={
+                              (service?.image &&
+                                urlFor(service?.image)
+                                  ?.ignoreImageParams()
+                                  ?.width(600)
+                                  ?.quality(60)
+                                  ?.url()) ??
+                              '/product/backlook.jpg'
+                            }
+                            fill
+                            className='object-cover'
+                            alt=''
+                          />
+                        )}
                       </div>
                     </Link>
 

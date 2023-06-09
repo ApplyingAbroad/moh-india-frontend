@@ -41,13 +41,13 @@ const Hero = () => {
             poster='/hero/hero-main.jpeg'
           />
         </div>
-        <Image
+        {/* <Image
           src='/hero/hero-main.jpeg'
           alt=''
           height={500}
           width={300}
           className='hidden lg:block absolute -bottom-0 w-1/4 object-cover object-center right-32 h-96'
-        />
+        /> */}
         <div className='font-serif grid'>
           <h1 className='text-2xl lg:text-4xl max-w-xl mt-5 leading-normal text-black font-medium'>
             Experience Exquisite Designer Wear Crafted to Perfection
