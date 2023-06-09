@@ -110,7 +110,8 @@ export default function Services({ showAll }: { showAll: boolean }) {
             {/* lower card */}
             {services
               .slice(0, complete ? services.length : 4)
-              .map((service) => (
+              .map((service) => {
+            return  (
                 <div key={service._id} className='flex flex-col'>
                   <Link
                     href={`/services/${slugify(service.title)}`}
@@ -132,11 +133,12 @@ export default function Services({ showAll }: { showAll: boolean }) {
                     <div role='img' className='relative h-full w-full'>
                       <Image
                         src={
-                          urlFor(service.image)
-                            .ignoreImageParams()
-                            .width(600)
-                            .quality(60)
-                            .url() || '/product/backlook.jpg'
+                            service?.image&&
+                          urlFor( service?.image)
+                            ?.ignoreImageParams()
+                            ?.width(600)
+                            ?.quality(60)
+                            ?.url() ?? '/product/backlook.jpg'
                         }
                         fill
                         className='object-cover'
@@ -156,7 +158,8 @@ export default function Services({ showAll }: { showAll: boolean }) {
                     {service.description}
                   </p>
                 </div>
-              ))}
+              )
+                    })}
             <button
               onClick={() => setComplete(!complete)}
               className='col-span-2 text-orange-700 hover:text-orange-600 font-medium text-lg'>
